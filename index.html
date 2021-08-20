@@ -152,6 +152,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Connect-github-using-ssh-keys" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/08/20/Connect-github-using-ssh-keys/">Connect github using ssh keys</a>
+    </h1>
+  
+
+        
+        <a href="/2021/08/20/Connect-github-using-ssh-keys/" class="archive-article-date">
+  	<time datetime="2021-08-20T09:00:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-生成本地电脑和Github链接的SSH公钥"><a href="#1-生成本地电脑和Github链接的SSH公钥" class="headerlink" title="1. 生成本地电脑和Github链接的SSH公钥"></a>1. 生成本地电脑和Github链接的SSH公钥</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;your github user name&quot;</span><br><span class="line">git config --global user.email &quot;your email account used in github&quot;</span><br><span class="line">ssh-keygen -t rsa -C &quot;your email account used in github&quot;</span><br></pre></td></tr></table></figure>
+
+<h1 id="2-将本地电脑和GitHub连接"><a href="#2-将本地电脑和GitHub连接" class="headerlink" title="2. 将本地电脑和GitHub连接"></a>2. 将本地电脑和GitHub连接</h1><p>公钥保存在 <code>C:\Users\.ssh</code> 的文件夹下，打开<code>id_rsa.pub</code>文件，将里面的内容全部复制； 然后去GitHub的Settings，找到<code>SSH and GPG keys</code>的页面， 新建一个SSH Key，将刚才复制的内容粘贴到新建的SSH Key中并点击保存。</p>
+<h1 id="3-验证结果"><a href="#3-验证结果" class="headerlink" title="3. 验证结果"></a>3. 验证结果</h1><ul>
+<li>命令行输入</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git@github.com</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>若出现以下提示即连接成功</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PTY allocation request failed on channel 0</span><br><span class="line">Hi [your username]! You&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="line">Connection to github.com closed.</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>若提示<code>The authenticity of host &#39;github.com (52.74.223.119)&#39; can&#39;t be established</code>，选择<code>yes</code>继续连接，此时会在<code>ssh</code>目录下生成<code>know_hosts</code>文件，再次检验则成功。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/08/20/Connect-github-using-ssh-keys/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-使用Hexo搭建个人博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
