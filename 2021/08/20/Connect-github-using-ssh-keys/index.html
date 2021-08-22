@@ -18,7 +18,7 @@
   <meta name="author" content="Wang Hao">
   <meta name="keywords" content="">
   
-  <title>Connect github using ssh key - Hao&#39;s Blog</title>
+  <title>用ssh连接Github - Hao&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Connect github using ssh key">
+            <span class="h2" id="subtitle" title="用ssh连接Github">
               
             </span>
 
@@ -225,11 +225,11 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Connect github using ssh key</h1>
+            <h1 style="display: none">用ssh连接Github</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年8月20日 晚上
+                  本文最后更新于：2021年8月22日 晚上
                 
               </p>
             
@@ -237,13 +237,13 @@
               <p>使用<code>ssh</code>连接Github，解决命令行执行<code>git clone</code>等命令时报错的问题</p>
 <span id="more"></span>
 
-<h1 id="1-生成本地电脑和Github链接的SSH公钥"><a href="#1-生成本地电脑和Github链接的SSH公钥" class="headerlink" title="1. 生成本地电脑和Github链接的SSH公钥"></a>1. 生成本地电脑和Github链接的SSH公钥</h1><figure class="highlight lua"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs lua">git <span class="hljs-built_in">config</span> <span class="hljs-comment">--global user.name &quot;your github user name&quot;</span><br>git <span class="hljs-built_in">config</span> <span class="hljs-comment">--global user.email &quot;your email account used in github&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;your email account used in github&quot;</span><br></code></pre></div></td></tr></table></figure>
+<h1 id="1-生成本地电脑和Github链接的SSH公钥"><a href="#1-生成本地电脑和Github链接的SSH公钥" class="headerlink" title="1. 生成本地电脑和Github链接的SSH公钥"></a>1. 生成本地电脑和Github链接的SSH公钥</h1><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;your github user name&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;your email account used in github&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;your email account used in github&quot;</span><br></code></pre></div></td></tr></table></figure>
 
 <h1 id="2-将本地电脑和GitHub连接"><a href="#2-将本地电脑和GitHub连接" class="headerlink" title="2. 将本地电脑和GitHub连接"></a>2. 将本地电脑和GitHub连接</h1><p>公钥保存在 <code>C:\Users\.ssh</code> 的文件夹下，打开<code>id_rsa.pub</code>文件，将里面的内容全部复制； 然后去GitHub的Settings，找到<code>SSH and GPG keys</code>的页面， 新建一个SSH Key，将刚才复制的内容粘贴到新建的SSH Key中并点击保存。</p>
 <h1 id="3-验证结果"><a href="#3-验证结果" class="headerlink" title="3. 验证结果"></a>3. 验证结果</h1><ul>
 <li>命令行输入</li>
 </ul>
-<figure class="highlight angelscript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs angelscript"><span class="hljs-symbol">git@</span>github.com<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git@github.com<br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>若出现以下提示即连接成功</li>
@@ -262,7 +262,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/Computer-Science/">Computer Science</a>
+                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%A7%91/">计科</a>
                     
                   </div>
                 
@@ -286,6 +286,12 @@
                 <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/08/22/Developer-tools-and-configuration/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">常用开发工具的安装及配置</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
