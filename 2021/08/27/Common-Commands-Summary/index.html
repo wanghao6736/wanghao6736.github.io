@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="使用ssh连接Github，解决命令行执行git clone等命令时报错的问题">
+  <meta name="description" content="Linux系统和Windows系统下的常用shell命令汇总">
   <meta name="author" content="Wang Hao">
   <meta name="keywords" content="">
   
-  <title>用ssh连接Github - Hao&#39;s Blog</title>
+  <title>常用系统命令总结 - Hao&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="用ssh连接Github">
+            <span class="h2" id="subtitle" title="常用系统命令总结">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-20 17:00" pubdate>
-        2021年8月20日 下午
+      <time datetime="2021-08-27 12:49" pubdate>
+        2021年8月27日 下午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      251 字
+      516 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      4
        分钟
     </span>
   
@@ -225,34 +225,41 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">用ssh连接Github</h1>
+            <h1 style="display: none">常用系统命令总结</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年8月27日 下午
+                  本文最后更新于：2021年8月28日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <p>使用<code>ssh</code>连接Github，解决命令行执行<code>git clone</code>等命令时报错的问题</p>
+              <p><code>Linux</code>系统和<code>Windows</code>系统下的常用<code>shell</code>命令汇总</p>
 <span id="more"></span>
 
-<h1 id="1-生成本地电脑和Github链接的SSH公钥"><a href="#1-生成本地电脑和Github链接的SSH公钥" class="headerlink" title="1. 生成本地电脑和Github链接的SSH公钥"></a>1. 生成本地电脑和Github链接的SSH公钥</h1><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;your github user name&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;your email account used in github&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;your email account used in github&quot;</span><br></code></pre></div></td></tr></table></figure>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="Linux通用"><a href="#Linux通用" class="headerlink" title="Linux通用"></a>Linux通用</h2><h3 id="1-文件类"><a href="#1-文件类" class="headerlink" title="1.文件类"></a>1.文件类</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ls -lh <span class="hljs-comment"># 列出文件目录</span><br>rm [-rf] [file|dir] <span class="hljs-comment"># 删除文件/目录</span><br>cp <span class="hljs-comment"># 拷贝文件</span><br>mv <span class="hljs-comment"># 移动文件</span><br>mkdir [dir] <span class="hljs-comment"># 创建目录</span><br>cat [file] <span class="hljs-comment"># 查看文件</span><br>touch [file] <span class="hljs-comment"># 编辑文件，不存在则新建</span><br><span class="hljs-built_in">pwd</span> <span class="hljs-comment"># 显示当前所在目录</span><br>whoami <span class="hljs-comment"># 显示当前用户</span><br><span class="hljs-built_in">cd</span> ~/-/[dir] <span class="hljs-comment"># 跳转到用户目录/上一个使用的目录/dir目录</span><br>find [file] <span class="hljs-comment"># 查找文件</span><br>&gt; / &gt;&gt; [result.txt] <span class="hljs-comment"># 标准输出重定向，覆盖之前内容/附加模式（保留之前内容）</span><br></code></pre></div></td></tr></table></figure>
 
-<h1 id="2-将本地电脑和GitHub连接"><a href="#2-将本地电脑和GitHub连接" class="headerlink" title="2. 将本地电脑和GitHub连接"></a>2. 将本地电脑和GitHub连接</h1><p>公钥保存在 <code>C:\Users\.ssh</code> 的文件夹下，打开<code>id_rsa.pub</code>文件，将里面的内容全部复制； 然后去GitHub的Settings，找到<code>SSH and GPG keys</code>的页面， 新建一个SSH Key，将刚才复制的内容粘贴到新建的SSH Key中并点击保存。</p>
-<h1 id="3-验证结果"><a href="#3-验证结果" class="headerlink" title="3. 验证结果"></a>3. 验证结果</h1><ul>
-<li>命令行输入</li>
+<h3 id="2-包管理"><a href="#2-包管理" class="headerlink" title="2.包管理"></a>2.包管理</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt install [pkg_name]<br></code></pre></div></td></tr></table></figure>
+
+<h3 id="3-系统类"><a href="#3-系统类" class="headerlink" title="3.系统类"></a>3.系统类</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">su <span class="hljs-comment"># 切换到管理员模式</span><br>sudo [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 以管理员身份执行命令</span><br>su -u root -p <span class="hljs-comment"># 设置管理员密码</span><br><span class="hljs-built_in">echo</span> [content] <span class="hljs-comment"># 显示某一信息</span><br>df <span class="hljs-comment"># 检查硬盘剩余空间</span><br>du <span class="hljs-comment"># 检查目录所用空间</span><br>man [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 查看命令帮助信息</span><br>lpr <span class="hljs-comment"># 显示文件</span><br>cal <span class="hljs-comment"># 显示万年历</span><br><span class="hljs-built_in">which</span> [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 查询命令</span><br><span class="hljs-built_in">alias</span> [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 为命令取别名</span><br><span class="hljs-built_in">unalias</span> [name] <span class="hljs-comment"># 删除name别名</span><br>reboot <span class="hljs-comment"># 重启系统</span><br>shutdown <span class="hljs-comment"># 关机</span><br>mount/umount [device] [dir] <span class="hljs-comment"># 挂载/取消挂载device为dir目录</span><br><span class="hljs-built_in">history</span> <span class="hljs-comment"># 显示所有历史输入的命令</span><br>[<span class="hljs-built_in">command</span>] | grep [kw] <span class="hljs-comment"># 管道命令&quot;|&quot;将command执行的结果传给grep命令，grep再根据kw进行筛选</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">aptitude <span class="hljs-comment"># 查看已安装的软件</span><br>apt list <span class="hljs-comment"># 查看已安装的软件</span><br>apt edit-sources <span class="hljs-comment"># 编辑源列表</span><br>apt [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 执行包管理命令，如：install、remove、update等</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">open [file] <span class="hljs-comment"># 打开文件/目录/软件</span><br>say [str] <span class="hljs-comment"># 语音朗读str</span><br>say -f demo.txt -o [file] <span class="hljs-comment"># 朗读demo，并将结果存储到file中</span><br></code></pre></div></td></tr></table></figure>
+
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="1-文件类-1"><a href="#1-文件类-1" class="headerlink" title="1.文件类"></a>1.文件类</h2><ul>
+<li>文件批量重命名</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git@github.com<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ren *.jpg *.png <span class="hljs-comment"># 重命名jpg格式文件为png格式</span><br>ren *.* *.png <span class="hljs-comment"># 重命名所有格式文件为png格式</span><br><span class="hljs-built_in">cd</span> -d [dist] <span class="hljs-comment"># 目录跳转，使用-d参数支持跨盘符跳转</span><br></code></pre></div></td></tr></table></figure>
 
 <ul>
-<li>若出现以下提示即连接成功</li>
+<li>列出文件目录</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">PTY allocation request failed on channel 0<br>Hi [your username]! You<span class="hljs-string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="hljs-string">Connection to github.com closed.</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">dir [path] &gt; [dist]\dir.txt <span class="hljs-comment"># 列出path目录下的文件，并导出到dist目录下的dir.txt中</span><br></code></pre></div></td></tr></table></figure>
 
-<div class="note note-info">
-            <p>若提示<code>The authenticity of host &#39;github.com (52.74.223.119)&#39; can&#39;t be established</code>，选择<code>yes</code>继续连接，此时会在<code>ssh</code>目录下生成<code>know_hosts</code>文件，再次检验则成功。</p>
-          </div>
+<h2 id="2-网络类"><a href="#2-网络类" class="headerlink" title="2.网络类"></a>2.网络类</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ipconfig -all <span class="hljs-comment"># 查看ip配置信息</span><br>ipconfig /flushdns <span class="hljs-comment"># 刷新系统DNS缓存</span><br>ping [ip] <span class="hljs-comment"># 检查网络连通性</span><br></code></pre></div></td></tr></table></figure>
+
+<h2 id="3-通用类"><a href="#3-通用类" class="headerlink" title="3.通用类"></a>3.通用类</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cls <span class="hljs-comment"># 清屏</span><br><span class="hljs-built_in">exit</span> <span class="hljs-comment"># 退出</span><br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -270,7 +277,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/">软件配置</a>
+                      <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
                     
                   </div>
                 
@@ -287,18 +294,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/22/Developer-tools-and-configuration/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">常用开发工具的安装及配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/20/Hexo-Blog/">
-                        <span class="hidden-mobile">基于Hexo框架的博客搭建</span>
+                      <a href="/2021/08/27/3DsMax-learning-note/">
+                        <span class="hidden-mobile">3DsMax 学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

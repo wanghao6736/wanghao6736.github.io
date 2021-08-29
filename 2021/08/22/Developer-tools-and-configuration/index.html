@@ -14,7 +14,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="记录一下常用开发工具的安装和配置细节，省得每次重装系统后安装软件出点小问题都得百度来百度去的。">
+  <meta name="description" content="记录一下常用开发工具的安装和配置细节，省得每次重装系统后安装软件出点小问题都得百度来百度去的">
   <meta name="author" content="Wang Hao">
   <meta name="keywords" content="">
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      732 字
+      922 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      9
+      7
        分钟
     </span>
   
@@ -229,44 +229,44 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年8月22日 晚上
+                  本文最后更新于：2021年8月29日 晚上
                 
               </p>
             
             <div class="markdown-body">
-              <p>记录一下常用开发工具的安装和配置细节，省得每次重装系统后安装软件出点小问题都得百度来百度去的。</p>
+              <p>记录一下常用开发工具的安装和配置细节，省得每次重装系统后安装软件出点小问题都得百度来百度去的</p>
 <span id="more"></span>
 
-<h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">node.js官网</a>下载安装，推荐下载长期支持（LTS）版本，配置好后用以下命令检测是否安装成功</p>
-<figure class="highlight nginx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">node</span> -v<br>npm -v<br></code></pre></div></td></tr></table></figure>
+<h1 id="Node-js"><a href="#Node-js" class="headerlink" title="Node.js"></a>Node.js</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">node.js官网</a>下载安装，推荐下载长期支持（LTS）版本，配置好后用以下命令检测是否安装成功</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">node -v<br>npm -v<br></code></pre></div></td></tr></table></figure>
 
 <h2 id="2-配置"><a href="#2-配置" class="headerlink" title="2. 配置"></a>2. 配置</h2><ul>
 <li>将<code>node.js</code>主目录添加到环境变量<code>path</code>中，安装时默认添加。</li>
 <li>配置全局模块安装目录，默认在C盘用户目录的<code>AppData</code>文件夹下</li>
 </ul>
-<figure class="highlight nginx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">npm</span> config set prefix <span class="hljs-string">&quot;[dest]\node_global_modules&quot;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> prefix <span class="hljs-string">&quot;[dest]\node_global_modules&quot;</span><br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>配置包下载缓存目录，默认仍然在C盘用户目录<code>AppData</code>文件夹下</li>
 </ul>
-<figure class="highlight nginx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">npm</span> config set cache <span class="hljs-string">&quot;[dest]\node_cache&quot;</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> cache <span class="hljs-string">&quot;[dest]\node_cache&quot;</span><br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>配置国内镜像源，加快包的下载速度</li>
 </ul>
-<figure class="highlight nginx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">npm</span> config set registry=http://registry.npm.taobao.org -g<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm config <span class="hljs-built_in">set</span> registry=http://registry.npm.taobao.org -g<br></code></pre></div></td></tr></table></figure>
 
 <h2 id="3-可能出现的问题"><a href="#3-可能出现的问题" class="headerlink" title="3. 可能出现的问题"></a>3. 可能出现的问题</h2><p>若安装后命令不生效，可以重启电脑或者手动设置一遍环境变量</p>
-<h2 id="4-安装GitBook"><a href="#4-安装GitBook" class="headerlink" title="4. 安装GitBook"></a>4. 安装<code>GitBook</code></h2><figure class="highlight nginx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">npm</span> install -g gitbook-cli<br></code></pre></div></td></tr></table></figure>
+<h2 id="4-安装GitBook"><a href="#4-安装GitBook" class="headerlink" title="4. 安装GitBook"></a>4. 安装<code>GitBook</code></h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install -g gitbook-cli<br></code></pre></div></td></tr></table></figure>
 
 <p>运行以下命令检验是否安装成功</p>
-<figure class="highlight nginx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">gitbook</span> -V<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">gitbook -V<br></code></pre></div></td></tr></table></figure>
 
 <p>若此时卡在<code>installing GitBook 3.2.3</code>，并显示如下错误信息</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs x86asm">gitbook-<span class="hljs-keyword">cli</span>\node_modules\npm\node_modules\graceful-<span class="hljs-built_in">fs</span>\polyfills<span class="hljs-number">.</span><span class="hljs-keyword">js</span>:<span class="hljs-number">287</span>:<span class="hljs-number">18</span><br><span class="hljs-meta">at</span> FSReqCallback<span class="hljs-number">.</span>oncomplete (<span class="hljs-built_in">fs</span><span class="hljs-number">.</span><span class="hljs-keyword">js</span>:<span class="hljs-number">169</span>:<span class="hljs-number">5</span>)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">gitbook-cli\node_modules\npm\node_modules\graceful-fs\polyfills.js:287:18<br>at FSReqCallback.oncomplete (fs.js:169:5)<br></code></pre></div></td></tr></table></figure>
 
 <p>则原因为<code>gitbook-cli</code>引用了旧版的<code>graceful-fs</code>库，进入<code>gitbook-cli</code>全局安装目录下的<code>node</code>依赖文件夹<code>...\gitbook-cli\node_modules\npm\node_modules</code>，执行以下命令更新<code>graceful-fs</code>库即可。</p>
-<figure class="highlight nginx"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs nginx"><span class="hljs-attribute">npm</span> install graceful-fs@latest --save<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install graceful-fs@latest --save<br></code></pre></div></td></tr></table></figure>
 
 <div class="note note-info">
             <p>若更新了<code>graceful-fs</code>库仍卡在<code>installing GitBook 3.2.3</code>，则可能是因为<code>GitBook</code>安装在了C盘的用户目录下，进入该目录下的对应文件夹按以上命令更新<code>graceful-fs</code>库即可。</p>
@@ -279,9 +279,23 @@
 </ul>
 <h2 id="3-验证安装"><a href="#3-验证安装" class="headerlink" title="3. 验证安装"></a>3. 验证安装</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">java -v<br>javac -v<br></code></pre></div></td></tr></table></figure>
 
-<h1 id="python"><a href="#python" class="headerlink" title="python"></a>python</h1><h2 id="1-安装-2"><a href="#1-安装-2" class="headerlink" title="1. 安装"></a>1. 安装</h2><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/">python官网</a>下载安装</p>
-<h2 id="2-配置-2"><a href="#2-配置-2" class="headerlink" title="2. 配置"></a>2. 配置</h2><p>更改<code>pip</code>命令的安装源为国内的镜像源，提高包的下载速度，在C盘的用户目录下新建文件夹<code>pip</code>，在其中新建文件<code>pip.ini</code>，写入以下内容</p>
-<figure class="highlight pgsql"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs pgsql">[<span class="hljs-keyword">global</span>]<br>timeout = <span class="hljs-number">6000</span><br><span class="hljs-keyword">index</span>-url = https://pypi.tuna.tsinghua.edu.cn/simple<br>[install]<br><span class="hljs-keyword">trusted</span>-host = mirrors.aliyun.com<br></code></pre></div></td></tr></table></figure>
+<h1 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h1><h2 id="1-安装-2"><a href="#1-安装-2" class="headerlink" title="1. 安装"></a>1. 安装</h2><p><a target="_blank" rel="noopener" href="https://www.python.org/downloads/">python官网</a>下载安装</p>
+<h2 id="2-配置-2"><a href="#2-配置-2" class="headerlink" title="2. 配置"></a>2. 配置</h2><ul>
+<li><p>更改镜像源</p>
+<p>更改<code>pip</code>命令的安装源为国内的镜像源，提高包的下载速度，在C盘的用户目录下新建文件夹<code>pip</code>，在其中新建文件<code>pip.ini</code>，写入以下内容</p>
+</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-section">[global]</span><br>	<span class="hljs-attr">timeout</span> = <span class="hljs-number">6000</span><br>	<span class="hljs-attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple<br>	<span class="hljs-comment"># &lt;==&gt; pip install -i [index-url] [pkg_name]</span><br><span class="hljs-section">[install]</span><br>	<span class="hljs-attr">trusted-host</span> = mirrors.aliyun.com<br></code></pre></div></td></tr></table></figure>
+
+<h2 id="3-第三方库的导入和导出"><a href="#3-第三方库的导入和导出" class="headerlink" title="3. 第三方库的导入和导出"></a>3. 第三方库的导入和导出</h2><ul>
+<li>导出</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip freeze &gt; [path]\requirements.txt<br></code></pre></div></td></tr></table></figure>
+
+<ul>
+<li>导入</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip install -r requirements.txt<br></code></pre></div></td></tr></table></figure>
 
 <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h1><h2 id="1-安装-3"><a href="#1-安装-3" class="headerlink" title="1. 安装"></a>1. 安装</h2><p><a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Git官网</a>下载安装</p>
 <h2 id="2-配置-3"><a href="#2-配置-3" class="headerlink" title="2. 配置"></a>2. 配置</h2><p>首先将<code>git</code>主目录添加到环境变量<code>path</code>中，然后设置全局用户名和邮箱，作为<code>git commit</code>的发起用户</p>
@@ -289,6 +303,16 @@
 
 <h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="1-安装-4"><a href="#1-安装-4" class="headerlink" title="1. 安装"></a>1. 安装</h2><p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/installer/">MySQL官网</a>下载免费的社区安装版本，安装时推荐勾选<code>MySQL WorkBench</code>，作为数据库的图形化操作界面</p>
 <h2 id="2-配置-4"><a href="#2-配置-4" class="headerlink" title="2. 配置"></a>2. 配置</h2><p>首次使用需要设置用户名和密码，使用<code>idea</code>等软件连接时确保<code>mysql</code>服务已经启动</p>
+<h2 id="3-IDEA配置MySQL"><a href="#3-IDEA配置MySQL" class="headerlink" title="3. IDEA配置MySQL"></a>3. IDEA配置MySQL</h2><p>问题：<code>IEDA</code>中配置<code>MySQL</code>出现<code>Server returns invalid timezone. Go to &#39;Advanced&#39; tab and set &#39;serverTimezone&#39; property manually</code>报错</p>
+<p>原因：<code>MySQL</code>驱动<code>jar</code>中的默认时区是<code>UTC</code>，其代表的是全球标准时间 ，但是我们使用的时间是北京时区-东八区，领先UTC八个小时，因为时区不一致，导致了该错误</p>
+<p>解决方法有以下三个：</p>
+<ul>
+<li>在<code>Advanced</code>面板下将<code>serverTimezone</code>设置为<code>Asia/Shanghai</code></li>
+<li>在连接数据库的<code>url</code>后面添加参数<code>?serverTimezone=UTC</code>，设置时区为<code>UTC</code></li>
+<li>更改<code>MySQL</code>的配置文件<code>my.ini</code>如下：</li>
+</ul>
+<figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-section">[mysqld]</span><br>	<span class="hljs-attr">default-time_zone</span> = <span class="hljs-string">&#x27;+8:00&#x27;</span><br></code></pre></div></td></tr></table></figure>
+
 
             </div>
             <hr>
@@ -404,30 +428,6 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
-  <div class="statistics">
-    
-    
-
-    
-      
-        <!-- 不蒜子统计PV -->
-        <span id="busuanzi_container_site_pv" style="display: none">
-            总访问量 
-            <span id="busuanzi_value_site_pv"></span>
-             次
-          </span>
-      
-      
-        <!-- 不蒜子统计UV -->
-        <span id="busuanzi_container_site_uv" style="display: none">
-            总访客数 
-            <span id="busuanzi_value_site_uv"></span>
-             人
-          </span>
-      
-    
-  </div>
-
 
   
 
@@ -483,8 +483,6 @@
   <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
 
 
-
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
