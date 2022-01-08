@@ -14,7 +14,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="这段时间打算把自己理解的PFC记下来，一方面做个笔记，另一方面方便以后回过头来看看自己哪些地方理解得不够深入">
+  <meta name="description" content="这段时间打算把跟PFC有关的知识点记下来，一方面做个笔记，另一方面方便以后回过头来看看自己哪些地方理解得不够深入">
   <meta name="author" content="Wang Hao">
   <meta name="keywords" content="">
   
@@ -229,12 +229,12 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2021年11月17日 下午
+                  本文最后更新于：2021年11月30日 下午
                 
               </p>
             
             <div class="markdown-body">
-              <p>这段时间打算把自己理解的<code>PFC</code>记下来，一方面做个笔记，另一方面方便以后回过头来看看自己哪些地方理解得不够深入</p>
+              <p>这段时间打算把跟<code>PFC</code>有关的知识点记下来，一方面做个笔记，另一方面方便以后回过头来看看自己哪些地方理解得不够深入</p>
 <span id="more"></span>
 
 <h2 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h2><p>研一下就开始断断续续地学<code>PFC</code>，到现在也快接近一年时间了，网上教程比较杂，也没有找到比较好的，现在来看还是官方给的手册最靠谱。<code>PFC (Particle Flow Code)</code>是美国<code>ITASCA</code>公司开发的一款离散元仿真软件，基于离散元理论来模拟仿真实际的岩土工程问题。</p>
@@ -253,7 +253,7 @@
 <h3 id="8-模型参数标定"><a href="#8-模型参数标定" class="headerlink" title="8.模型参数标定*"></a>8.模型参数标定*</h3><p>模型参数主要包括颗粒参数和接触模型参数，这两者都是在颗粒这一微观的尺度上设置的，而现实中我们能获取的是弹性模量、应力应变曲线这些宏观的数据。通过设置适当的微观参数，使模型仿真得到的结果和实际的宏观数据一致或者接近，这个过程就是模型参数标定，参数标定一般采用三轴试验或双轴试验等单元试验，标定后的模型参数就可以用于实际岩土体问题的仿真研究了。</p>
 <h3 id="9-回调函数"><a href="#9-回调函数" class="headerlink" title="9.回调函数*"></a>9.回调函数*</h3><p>如果想在每个时步结束后，对模型执行一些特定的操作，则可以通过编写回调函数来实现。</p>
 <div class="note note-info">
-            <p>本笔记所有内容均是基于 <code>PFC 6.00.13 </code>版本以及其自带的手册总结得到，软件版本的不同，则部分命令形式也有细微的差异，建议以官方最新的<a target="_blank" rel="noopener" href="http://docs.itascacg.com/pfc700/pfc/docproject/source/manual/pfchome.html">文档</a>为准</p>
+            <p>本笔记所有内容均是基于 <code>PFC 6.00.13 </code>版本以及其自带的手册总结得到，软件版本不同，则部分命令形式也会有细微的差异，建议以官方最新的<a target="_blank" rel="noopener" href="http://docs.itascacg.com/pfc700/pfc/docproject/source/manual/pfchome.html">文档</a>为准</p>
           </div>
 
             </div>
