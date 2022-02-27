@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="使用ssh连接 Github，解决命令行执行git clone等命令时报错的问题">
+  <meta name="description" content="16 年大一入学买的滑板，鸽到 22 年才开始练 Ollie">
   <meta name="author" content="Wang Hao">
   <meta name="keywords" content="">
   
-  <title>用ssh连接Github - Hao&#39;s Blog</title>
+  <title>Ollie 学习记录 - Hao&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="用ssh连接Github">
+            <span class="h2" id="subtitle" title="Ollie 学习记录">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-20 17:00" pubdate>
-        2021年8月20日 下午
+      <time datetime="2022-02-26 22:30" pubdate>
+        2022年2月26日 晚上
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      255 字
+      1.6k 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      11
        分钟
     </span>
   
@@ -225,34 +225,29 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">用ssh连接Github</h1>
+            <h1 style="display: none">Ollie 学习记录</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年1月14日 下午
+                  本文最后更新于：2022年2月27日 下午
                 
               </p>
             
             <div class="markdown-body">
-              <p>使用<code>ssh</code>连接 Github，解决命令行执行<code>git clone</code>等命令时报错的问题</p>
+              <p>16 年大一入学买的滑板，鸽到 22 年才开始练 Ollie</p>
 <span id="more"></span>
 
-<h1 id="1-生成本地电脑和-Github-链接的-SSH-公钥"><a href="#1-生成本地电脑和-Github-链接的-SSH-公钥" class="headerlink" title="1. 生成本地电脑和 Github 链接的 SSH 公钥"></a>1. 生成本地电脑和 Github 链接的 SSH 公钥</h1><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&quot;your github user name&quot;</span><br>git config --global user.email <span class="hljs-string">&quot;your email account used in github&quot;</span><br>ssh-keygen -t rsa -C <span class="hljs-string">&quot;your email account used in github&quot;</span><br></code></pre></div></td></tr></table></figure>
-
-<h1 id="2-将本地电脑和-GitHub-连接"><a href="#2-将本地电脑和-GitHub-连接" class="headerlink" title="2. 将本地电脑和 GitHub 连接"></a>2. 将本地电脑和 GitHub 连接</h1><p>公钥保存在 <code>C:\Users\.ssh</code> 的文件夹下，打开<code>id_rsa.pub</code>文件，将里面的内容全部复制； 然后去 GitHub 的 Settings，找到<code>SSH and GPG keys</code>的页面， 新建一个 SSH Key，将刚才复制的内容粘贴到新建的 SSH Key 中并点击保存。</p>
-<h1 id="3-验证结果"><a href="#3-验证结果" class="headerlink" title="3. 验证结果"></a>3. 验证结果</h1><ul>
-<li>命令行输入</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git@github.com<br></code></pre></div></td></tr></table></figure>
-
-<ul>
-<li>若出现以下提示即连接成功</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">PTY allocation request failed on channel 0<br>Hi [your username]! You<span class="hljs-string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="hljs-string">Connection to github.com closed.</span><br></code></pre></div></td></tr></table></figure>
-
-<div class="note note-info">
-            <p>若提示<code>The authenticity of host &#39;github.com (52.74.223.119)&#39; can&#39;t be established</code>，选择<code>yes</code>继续连接，此时会在<code>ssh</code>目录下生成<code>know_hosts</code>文件，再次检验则成功。</p>
-          </div>
+<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>16 年 9 月大学军训那会兴致勃勃地买了个滑板，滑了一学期多就放在角落落灰了，当时想等到大二课少了再滑，结果大二课也多，大三又搬校区了，后面直到本科毕业都没再滑了 😂。毕业后一直放在家里二楼上，今年寒假 3 岁的外甥女来家里玩看到了，非要拿到楼下去玩，结果她玩一会就不玩了，我倒是又重新燃起了玩滑板的热情······从 1 月底到 2 月 10 号左右两周多的时间，基本上每天午饭和晚饭后都会练一个小时多，最后总算是勉强学会了，今天大概写一下我学习 Ollie 的过程，方便以后。</p>
+<h2 id="学-Ollie-的前期准备"><a href="#学-Ollie-的前期准备" class="headerlink" title="学 Ollie 的前期准备"></a>学 Ollie 的前期准备</h2><p>Ollie 可以说是刚玩滑板的大门槛了，它要求从滑板上跳起来再落回板上，对平衡还是有一定要求的。所以学 Ollie 前应该尽量把基本的滑行和荡板学会，保证自己不会轻易地从板上摔下来，不过这些我在刚买滑板那会儿凭着一腔热血学会了，所以今年寒假就直接开始学 Ollie 了。</p>
+<h2 id="Ollie-的原理"><a href="#Ollie-的原理" class="headerlink" title="Ollie 的原理"></a>Ollie 的原理</h2><p>关于 Ollie 的原理，网上随便一搜就有一大堆视频/文章解释，总结起来就是起跳并用后脚点板使板翘起来，然后前脚掌垂直于板面立起来，用鞋的侧面接触板面上的砂纸，然后前脚向前刷板，把板带到空中，最后再落回板上，按我的经验每步的详细操作如下：</p>
+<h3 id="起跳"><a href="#起跳" class="headerlink" title="起跳"></a>起跳</h3><p>起跳前先站好脚位：后脚踩在板尾上，后脚掌刚好盖住板尾就行，后脚尖不要伸出板面；前脚掌踩在板面上前部四颗桥钉靠后的位置，预留出足够的刷板空间，前脚尖同样不要伸出板面。起跳的时候要保持自身的重心在板的中心，不然就会失去平衡，同时前腿要弯曲并向上抬，不要阻碍滑板翘起来。</p>
+<h3 id="点板"><a href="#点板" class="headerlink" title="点板"></a>点板</h3><p>点板时用后脚掌往下压板尾，后脚跟不动，并且点板要使板尾碰到地面，让板反弹起来，成功地点板后能很明显地听到板尾碰撞地面发出的“哒”的声音。另外点板也要注意保持板的方向保持不变，这个可以通过不断微调后脚的脚位来找到最佳的点板位置。</p>
+<h3 id="刷板"><a href="#刷板" class="headerlink" title="刷板"></a>刷板</h3><p>点板之后滑板处于倾斜的状态，这时候前脚掌要立起来，让前脚背尽可能地接近板面，然后用鞋的侧面向前刷板，把滑板带到空中，最后双脚再落回板上。</p>
+<h2 id="Ollie-的练习方法"><a href="#Ollie-的练习方法" class="headerlink" title="Ollie 的练习方法"></a>Ollie 的练习方法</h2><p>根据 Ollie 原理分三步来练习就好了，网上的教学视频一般是按点板-起跳-刷板的顺序教的，我自己是按起跳-点板-刷板的顺序练的，其实也差不多。</p>
+<h3 id="起跳练习"><a href="#起跳练习" class="headerlink" title="起跳练习"></a>起跳练习</h3><p>练起跳比较简单，就站在板上跳起来再落回板上，只要把平衡控制好就行了，滑行和荡板都会的话，练起跳应该问题不大。这一步最大的问题可能就是不敢跳，我一开始也是，但只要报着大不了就是摔一跤的心态去跳，就会发现这也不是很难，也没那么容易摔，简而言之就是莽就完了，这步我大概练了两天左右，保证跳起来不会摔下去后再练的点板。</p>
+<h3 id="点板练习"><a href="#点板练习" class="headerlink" title="点板练习"></a>点板练习</h3><p>点板我分成两步来练的：第一步是前脚踩在地上，后脚点板，找到点板合适的脚位，让点板后板的方向不发生改变；第二步是前脚踩在板上，起跳的同时后脚点板。第一步没啥问题，只要注意点板用脚掌下压，脚跟保持悬空就行，当然也要保证板尾触地。第二步的问题主要是起跳结合点板后，自己的重心可能会偏，或是向前或是向后，导致起跳后落不回板上，我在这步卡了两三天，最后刷了很多教学视频才解决：起跳的时候身体稍微前倾，让目光大概位于板沿的中央，然后跳起过程中有意识地保持上半身不向四周偏，这样重心就不会偏离板的中央了。这步的另一个问题就是板尾还没触地，前脚就把板踩了下去，这个我认为是起跳后前脚弯曲向上抬的幅度不够和点板力度不够导致的，这步也没什么技巧，只能不断地练不断地找感觉，这个问题一直贯穿我学 Ollie 的整个过程。</p>
+<h3 id="刷板练习"><a href="#刷板练习" class="headerlink" title="刷板练习"></a>刷板练习</h3><p>刷板是我卡得最久的项目，同样是分两步练：第一步后脚踩住板尾，保持滑板倾斜，然后把前脚立起来，用鞋得侧面练习刷板，找刷板的感觉，这一步我感觉没啥用，练的比较敷衍；第二步就是加上点板和起跳一起练，这步遇到的第一个问题就是前脚侧不过来，继续练了两三天，前脚就能侧过来了。这时又遇到了第二个问题，就是前脚虽然侧过来了，但是没有刷板，后轮还是没有离开地面，这个问题卡了我得有一周左右。终于在 2 月 9 号，我脑子突然开窍了，做出来了一个 Ollie，虽然只跳起来了一点点，但后面继续练也没成功几次。后面两天又做出了几个 Ollie，只有两个我觉得做得还行，大概有 10cm 高。以我的经验的话，成功的 Ollie 能明显地感觉到滑板给前脚刷板的反馈，然后就是刷板尽量让自己的前脚背靠近板面，这样刷板的成功率比较高。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>只要找个宽阔的场地，学 Ollie 其实并不容易摔跤，最主要的还是多练多总结经验，卡住了就刷教学视频找找感觉，其他的莽就完了。</p>
 
             </div>
             <hr>
@@ -262,7 +257,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%A7%91/">计科</a>
+                      <a class="hover-with-bg" href="/categories/%E8%BF%90%E5%8A%A8/">运动</a>
                     
                   </div>
                 
@@ -270,7 +265,7 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/%E8%BD%AF%E4%BB%B6%E9%85%8D%E7%BD%AE/">软件配置</a>
+                      <a class="hover-with-bg" href="/tags/%E6%BB%91%E6%9D%BF/">滑板</a>
                     
                   </div>
                 
@@ -287,18 +282,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/08/22/Developer-tools-and-configuration/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">常用开发工具的安装及配置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/20/Hexo-Blog/">
-                        <span class="hidden-mobile">基于Hexo框架的博客搭建</span>
+                      <a href="/2022/01/08/PFC-Notes-002/">
+                        <span class="hidden-mobile">PFC 学习笔记-002</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
