@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      255 字
+      251 字
     </span>
   
 
@@ -229,7 +229,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年1月14日 下午
+                  本文最后更新于：2022年3月24日 下午
                 
               </p>
             
@@ -243,12 +243,12 @@
 <h1 id="3-验证结果"><a href="#3-验证结果" class="headerlink" title="3. 验证结果"></a>3. 验证结果</h1><ul>
 <li>命令行输入</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git@github.com<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ssh -T git@github.com<br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>若出现以下提示即连接成功</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">PTY allocation request failed on channel 0<br>Hi [your username]! You<span class="hljs-string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="hljs-string">Connection to github.com closed.</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">Hi [your username]! You<span class="hljs-string">&#x27;ve successfully authenticated, but GitHub does not provide shell access.</span><br><span class="hljs-string">Connection to github.com closed.</span><br></code></pre></div></td></tr></table></figure>
 
 <div class="note note-info">
             <p>若提示<code>The authenticity of host &#39;github.com (52.74.223.119)&#39; can&#39;t be established</code>，选择<code>yes</code>继续连接，此时会在<code>ssh</code>目录下生成<code>know_hosts</code>文件，再次检验则成功。</p>
