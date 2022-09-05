@@ -229,7 +229,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年3月24日 下午
+                  本文最后更新于：2022年9月5日 晚上
                 
               </p>
             
@@ -277,7 +277,7 @@
 <h2 id="3-可能出现的问题"><a href="#3-可能出现的问题" class="headerlink" title="3. 可能出现的问题"></a>3. 可能出现的问题</h2><p>若安装后命令不生效，可以重启电脑或者使用管理员权限重试</p>
 <h2 id="4-安装GitBook"><a href="#4-安装GitBook" class="headerlink" title="4. 安装GitBook"></a>4. 安装<code>GitBook</code></h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install -g gitbook-cli <span class="hljs-comment"># 全局安装</span><br></code></pre></div></td></tr></table></figure>
 
-<p>运行以下命令检验是否安装成功</p>
+<p>检验是否安装成功</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">gitbook -V<br></code></pre></div></td></tr></table></figure>
 
 <p>若此时卡在<code>installing GitBook 3.2.3</code>，并显示如下错误信息</p>
@@ -286,9 +286,9 @@
 <p>则原因为<code>gitbook-cli</code>引用了旧版的<code>graceful-fs</code>库，<del>进入<code>gitbook-cli</code>全局安装目录下的<code>node</code>依赖文件夹<code>...\gitbook-cli\node_modules\npm\node_modules</code>，执行以下命令更新<code>graceful-fs</code>库即可。</del></p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install graceful-fs@latest --save <span class="hljs-comment"># 2022.03.17更，此操作已失效</span><br></code></pre></div></td></tr></table></figure>
 
-<p>导致以上问题的根本原因为旧版<code>graceful-ful</code>库下<code>polyfills.js</code>文件中<code>statFix()</code>函数的问题，到<a target="_blank" rel="noopener" href="https://github.com/isaacs/node-graceful-fs/">这里</a>下载修复后的<code>polyfills.js</code>文件替换原来的<code>polyfills.js</code>文件即可。需要注意的是，<code>gitbook-cli</code>全局安装目录下有两处出现了<code>graceful-fs</code>库，一是<code>...\gitbook-cli\node_modules\</code>，二是<code>...\gitbook-cli\node_modules\npm\node_modules</code>，这两个<code>graceful-fs</code>库中的<code>polyfills.js</code>文件都需要进行替换。</p>
+<p>导致以上问题的根本原因为旧版<code>graceful-ful</code>库下<code>polyfills.js</code>文件中<code>statFix()</code>函数的问题，到<a target="_blank" rel="noopener" href="https://github.com/isaacs/node-graceful-fs/">这里</a>下载修复后的<code>polyfills.js</code>文件替换原来的<code>polyfills.js</code>文件。需要注意的是，<code>gitbook-cli</code>全局安装目录下有两处出现了<code>graceful-fs</code>库，一是<code>...\gitbook-cli\node_modules\</code>，二是<code>...\gitbook-cli\node_modules\npm\node_modules</code>，这两个<code>graceful-fs</code>库中的<code>polyfills.js</code>文件都需要进行替换。</p>
 <div class="note note-info">
-            <p><code>Gitbook</code>已经很多年没有更新了，使用最新版的<code>node</code>安装会较大概率地出现各种各样的问题，建议使用<code>v12.18.2</code>及其之前的版本安装<code>Gitbook</code>。</p>
+            <p><code>Gitbook</code>本地版由于年久失修，使用最新版的<code>node</code>安装会较大概率地出现各种问题，推荐使用在线版 <a target="_blank" rel="noopener" href="https://app.gitbook.com/">GitBook</a>，或使用<code>v12.18.2</code>及其之前版本的<code>node</code>安装。</p>
           </div>
 
 <h1 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h1><h2 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h2><p>在<a target="_blank" rel="noopener" href="https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html">Oracle 官网</a>下载 Java 1.8 安装，安装的同时也会安装<code>jre</code>，1.8 版本使用较广，兼容性比新版本好一点。</p>
@@ -306,7 +306,7 @@
 </ul>
 <figure class="highlight ini"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs ini"><span class="hljs-section">[global]</span><br>    <span class="hljs-attr">timeout</span> = <span class="hljs-number">6000</span><br>    <span class="hljs-attr">index-url</span> = https://pypi.tuna.tsinghua.edu.cn/simple<br>    <span class="hljs-comment"># &lt;==&gt; pip install -i [index-url] [pkg_name]</span><br><span class="hljs-section">[install]</span><br>    <span class="hljs-attr">trusted-host</span> = mirrors.aliyun.com<br></code></pre></div></td></tr></table></figure>
 
-<h2 id="3-第三方库的导入和导出"><a href="#3-第三方库的导入和导出" class="headerlink" title="3. 第三方库的导入和导出"></a>3. 第三方库的导入和导出</h2><ul>
+<h2 id="3-第三方库的批量导入和导出"><a href="#3-第三方库的批量导入和导出" class="headerlink" title="3. 第三方库的批量导入和导出"></a>3. 第三方库的批量导入和导出</h2><ul>
 <li>导出</li>
 </ul>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">pip freeze &gt; [path]\requirements.txt<br></code></pre></div></td></tr></table></figure>
@@ -330,7 +330,7 @@
 <ul>
 <li>激活虚拟环境<br>推荐使用管理员权限执行以下操作，否则可能激活失败，激活成功后，第三方库会被安装在<code>.\venv_name\Lib\site-packages\</code>下。</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">./venv_name/Scripts/activate <span class="hljs-comment"># linux / Mac OS</span><br>./venv_name/Scripts/activate.bat <span class="hljs-comment"># cmd</span><br>./venv_name/Scripts/activate.ps1 <span class="hljs-comment"># powershell</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash"><span class="hljs-built_in">source</span> ./venv_name/Scripts/activate <span class="hljs-comment"># linux / Mac OS</span><br>./venv_name/Scripts/activate.bat <span class="hljs-comment"># cmd</span><br>./venv_name/Scripts/activate.ps1 <span class="hljs-comment"># powershell</span><br></code></pre></div></td></tr></table></figure>
 
 <ul>
 <li>退出虚拟环境</li>
@@ -406,7 +406,7 @@
                     
                     
                       <a href="/2021/08/20/Connect-github-using-ssh-keys/">
-                        <span class="hidden-mobile">用ssh连接Github</span>
+                        <span class="hidden-mobile">通过ssh与Github建立连接</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

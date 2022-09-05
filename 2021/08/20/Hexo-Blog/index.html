@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      325 字
+      357 字
     </span>
   
 
@@ -195,7 +195,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      2
+      3
        分钟
     </span>
   
@@ -229,7 +229,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年3月24日 下午
+                  本文最后更新于：2022年9月5日 晚上
                 
               </p>
             
@@ -237,12 +237,12 @@
               <p>搭建基于<code>hexo</code>框架的个人博客，并配合<code>fluid</code>主题进行博客的个性化设置</p>
 <span id="more"></span>
 
-<h2 id="1-安装-node-js"><a href="#1-安装-node-js" class="headerlink" title="1. 安装 node.js"></a>1. 安装 node.js</h2><p>到<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>下载<code>node.js</code>安装包并安装，命令行输入以下前两条命令检验是否安装成功，第三条命令会将镜像源改为国内的源，加快包的下载速度。</p>
+<h2 id="1-安装-node-js"><a href="#1-安装-node-js" class="headerlink" title="1. 安装 node.js"></a>1. 安装 node.js</h2><p>到<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>下载<code>node.js</code>安装包并安装，命令行输入以下前两条命令检验是否安装成功，并将镜像源改为国内的源，加快包的下载速度。</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">node -v<br>npm -v<br>npm install -g cnpm --registry=https://registry.npm.taobao.org<br></code></pre></div></td></tr></table></figure>
 
 <h2 id="2-安装-HEXO-模块"><a href="#2-安装-HEXO-模块" class="headerlink" title="2. 安装 HEXO 模块"></a>2. 安装 HEXO 模块</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install -g hexo-cli<br>hexo -v<br></code></pre></div></td></tr></table></figure>
 
-<h2 id="3-初始化博客"><a href="#3-初始化博客" class="headerlink" title="3. 初始化博客"></a>3. 初始化博客</h2><p>创建博客目录<code>user/hexo/blog/</code>，进入目录执行</p>
+<h2 id="3-初始化博客"><a href="#3-初始化博客" class="headerlink" title="3. 初始化博客"></a>3. 初始化博客</h2><p>创建博客目录<code>user/hexo/blog/</code>，并进入目录初始化博客</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo init<br></code></pre></div></td></tr></table></figure>
 
 <h2 id="4-启动博客"><a href="#4-启动博客" class="headerlink" title="4. 启动博客"></a>4. 启动博客</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo start<br></code></pre></div></td></tr></table></figure>
@@ -252,8 +252,12 @@
 <p>​ 在<code>./source/_posts/</code>下会生成<code>.md</code>文件，回到主目录执行以下命令更新内容</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo clean<br>hexo generate<br></code></pre></div></td></tr></table></figure>
 
+<div class="note note-info">
+            <p>新建博文的模板文件在博客目录下的<code>scaffolds</code>文件夹中，可根据需求进行自定义</p>
+          </div>
+
 <h2 id="6-将博客部署到-GitHub-Page"><a href="#6-将博客部署到-GitHub-Page" class="headerlink" title="6. 将博客部署到 GitHub Page"></a>6. 将博客部署到 GitHub Page</h2><ol>
-<li>转到主目录安装部署插件</li>
+<li>转到博客主目录安装部署插件</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install --save hexo-deployer-git<br></code></pre></div></td></tr></table></figure>
 
@@ -315,7 +319,7 @@
                     
                       <a href="/2021/08/20/Connect-github-using-ssh-keys/">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">用ssh连接Github</span>
+                        <span class="hidden-mobile">通过ssh与Github建立连接</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
