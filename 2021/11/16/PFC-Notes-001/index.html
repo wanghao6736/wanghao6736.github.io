@@ -233,7 +233,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年1月14日 下午
+                  本文最后更新于：2022年9月7日 晚上
                 
               </p>
             
@@ -255,7 +255,7 @@
 <h3 id="6-监测模型状态"><a href="#6-监测模型状态" class="headerlink" title="6.监测模型状态"></a>6.监测模型状态</h3><p>记录模型的状态改变是仿真的根本目的，通过监测仿真过程中模型各个参数的变化情况，进而对实际的岩土体问题从微观角度进行解释。</p>
 <h3 id="7-设置仿真终止条件"><a href="#7-设置仿真终止条件" class="headerlink" title="7. 设置仿真终止条件"></a>7. 设置仿真终止条件</h3><p>仿真可以在循环<code>cycle</code>指定步数后终止，也可以在求解<code>solve</code>一段时间后终止，用户也可以编写函数来控制仿真的终止条件。</p>
 <h3 id="8-模型参数标定"><a href="#8-模型参数标定" class="headerlink" title="8.模型参数标定*"></a>8.模型参数标定*</h3><p>模型参数主要包括颗粒参数和接触模型参数，这两者都是在颗粒这一微观的尺度上设置的，而现实中我们能获取的是弹性模量、应力应变曲线这些宏观的数据。通过设置适当的微观参数，使模型仿真得到的结果和实际的宏观数据一致或者接近，这个过程就是模型参数标定，参数标定一般采用三轴试验或双轴试验等单元试验，标定后的模型参数就可以用于实际岩土体问题的仿真研究了。</p>
-<h3 id="9-回调函数"><a href="#9-回调函数" class="headerlink" title="9.回调函数*"></a>9.回调函数*</h3><p>如果想在每个时步结束后，对模型执行一些特定的操作，则可以通过编写回调函数来实现。</p>
+<h3 id="9-回调函数"><a href="#9-回调函数" class="headerlink" title="9.回调函数*"></a>9.回调函数*</h3><p>如果想每隔一定时步就对模型执行一些特定的操作，则可以通过编写回调函数来实现。</p>
 <div class="note note-info">
             <p>本笔记所有内容均是基于 <code>PFC 6.00.13</code>版本以及其自带的帮助文档总结得到，软件版本不同，则部分命令形式也会有细微的差异，建议以官方最新的<a target="_blank" rel="noopener" href="http://docs.itascacg.com/pfc700/pfc/docproject/source/manual/pfchome.html">文档</a>为准</p>
           </div>
@@ -275,6 +275,8 @@
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
                     
                       <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
                     

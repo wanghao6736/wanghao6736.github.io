@@ -189,7 +189,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      357 字
+      680 字
     </span>
   
 
@@ -199,7 +199,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      3
+      5
        分钟
     </span>
   
@@ -233,7 +233,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年9月5日 晚上
+                  本文最后更新于：2022年9月7日 晚上
                 
               </p>
             
@@ -241,29 +241,32 @@
               <p>搭建基于<code>hexo</code>框架的个人博客，并配合<code>fluid</code>主题进行博客的个性化设置</p>
 <span id="more"></span>
 
-<h2 id="1-安装-node-js"><a href="#1-安装-node-js" class="headerlink" title="1. 安装 node.js"></a>1. 安装 node.js</h2><p>到<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">官网</a>下载<code>node.js</code>安装包并安装，命令行输入以下前两条命令检验是否安装成功，并将镜像源改为国内的源，加快包的下载速度。</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">node -v<br>npm -v<br>npm install -g cnpm --registry=https://registry.npm.taobao.org<br></code></pre></div></td></tr></table></figure>
+<h2 id="0-引言"><a href="#0-引言" class="headerlink" title="0. 引言"></a>0. 引言</h2><p>一直都想做一个自己的网站，来记录自己觉得有意义的事情，从零开始手撸 <code>HTML</code> 代码再部署又太麻烦了，自己做出来还不一定好看，所以最后决定用现成的博客框架配合上自己喜欢的主题来做一个博客网站。上网查了一通，发现 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo">Hexo</a> 这个静态的博客框架比较合适我，配置和部署也都比较简单。查文档搭建完博客之后，个人认为 <code>Hexo</code> 的默认主题不是很好看，就在 <code>Hexo</code> 官方展示的<a target="_blank" rel="noopener" href="https://hexo.io/themes/">主题库</a>里选了 <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a> 这个主题来代替。</p>
+<h2 id="1-安装-node-js"><a href="#1-安装-node-js" class="headerlink" title="1. 安装 node.js"></a>1. 安装 node.js</h2><p>到 <a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">Node 官网</a>下载对应系统的 <code>node.js</code> 安装包安装即可，安装完成后可以将镜像源改为国内的淘宝镜像源，加快包的下载速度。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">node -v <span class="hljs-comment"># node 版本，可检测 node 是否安装成功</span><br>npm -v  <span class="hljs-comment"># npm  版本，可检测 npm  是否安装成功</span><br>npm config <span class="hljs-built_in">set</span> registry https://registry.npm.taobao.org<br></code></pre></div></td></tr></table></figure>
 
-<h2 id="2-安装-HEXO-模块"><a href="#2-安装-HEXO-模块" class="headerlink" title="2. 安装 HEXO 模块"></a>2. 安装 HEXO 模块</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install -g hexo-cli<br>hexo -v<br></code></pre></div></td></tr></table></figure>
+<h2 id="2-安装-HEXO-模块"><a href="#2-安装-HEXO-模块" class="headerlink" title="2. 安装 HEXO 模块"></a>2. 安装 HEXO 模块</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install hexo-cli -g <span class="hljs-comment"># 全局安装</span><br>hexo -v <span class="hljs-comment"># hexo 版本，可检测 hexo 是否安装成功</span><br></code></pre></div></td></tr></table></figure>
 
 <h2 id="3-初始化博客"><a href="#3-初始化博客" class="headerlink" title="3. 初始化博客"></a>3. 初始化博客</h2><p>创建博客目录<code>user/hexo/blog/</code>，并进入目录初始化博客</p>
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo init<br></code></pre></div></td></tr></table></figure>
 
-<h2 id="4-启动博客"><a href="#4-启动博客" class="headerlink" title="4. 启动博客"></a>4. 启动博客</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo start<br></code></pre></div></td></tr></table></figure>
+<h2 id="4-新建博文"><a href="#4-新建博文" class="headerlink" title="4. 新建博文"></a>4. 新建博文</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo new <span class="hljs-string">&quot;My Blog&quot;</span><br></code></pre></div></td></tr></table></figure>
 
-<h2 id="5-新建博文"><a href="#5-新建博文" class="headerlink" title="5. 新建博文"></a>5. 新建博文</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo new <span class="hljs-string">&quot;My Blog&quot;</span><br></code></pre></div></td></tr></table></figure>
-
-<p>​ 在<code>./source/_posts/</code>下会生成<code>.md</code>文件，回到主目录执行以下命令更新内容</p>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo clean<br>hexo generate<br></code></pre></div></td></tr></table></figure>
+<p>以上命令​执行完后会在<code>./source/_posts/</code>下生成<code>My-Blog.md</code>文件，回到主目录执行以下命令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo clean    <span class="hljs-comment"># 清空之前渲染生成的网站文件</span><br>hexo generate <span class="hljs-comment"># 重新渲染生成新的网站文件</span><br></code></pre></div></td></tr></table></figure>
 
 <div class="note note-info">
-            <p>新建博文的模板文件在博客目录下的<code>scaffolds</code>文件夹中，可根据需求进行自定义</p>
+            <p>新建博文的模板文件在博客目录下的<code>scaffolds</code>文件夹中，可根据需求进行自定义。</p>
           </div>
 
+<h2 id="5-启动博客"><a href="#5-启动博客" class="headerlink" title="5. 启动博客"></a>5. 启动博客</h2><p>博客写完后，可以通过本地服务器预览最终渲染的网页效果，执行以下命令启动本地服务器：</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo start<br></code></pre></div></td></tr></table></figure>
+
+<p>然后打开浏览器，输入网址 <code>http://localhost:4000/</code> 就可以预览网站内容了。</p>
 <h2 id="6-将博客部署到-GitHub-Page"><a href="#6-将博客部署到-GitHub-Page" class="headerlink" title="6. 将博客部署到 GitHub Page"></a>6. 将博客部署到 GitHub Page</h2><ol>
 <li>转到博客主目录安装部署插件</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install --save hexo-deployer-git<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></div></td></tr></table></figure>
 
 <ol start="2">
 <li>更改<code>_config.yml</code>配置</li>
@@ -273,10 +276,10 @@
 <ol start="3">
 <li>部署</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo deploy<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">hexo deploy <span class="hljs-comment"># 将生成的网站文件发布到 Git Page 上</span><br></code></pre></div></td></tr></table></figure>
 
 <div class="note note-primary">
-            <p>需要事先在<code>Github</code>上创建一个名为<code>[username].github.io</code>的空仓库，<code>[username]</code>必须和自己的<code>Github</code>用户名一致</p>
+            <p>需要事先在 <code>Github</code> 上创建一个名为 <code>[username].github.io</code> 的空仓库，<code>[username]</code> 必须和自己的 <code>Github</code> 用户名一致</p>
           </div>
 
 <h2 id="7-个性化主题"><a href="#7-个性化主题" class="headerlink" title="7. 个性化主题"></a>7. 个性化主题</h2><ol>
@@ -285,8 +288,9 @@
 <figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/fluid-dev/hexo-theme-fluid.git themes/fluid<br></code></pre></div></td></tr></table></figure>
 
 <ol start="2">
-<li>在博客配置文件<code>_config.yml</code>中配置新的主题</li>
+<li>在博客配置文件 <code>_config.yml</code> 中配置新的主题</li>
 </ol>
+<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span> <span class="hljs-comment"># _config_yml</span><br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>

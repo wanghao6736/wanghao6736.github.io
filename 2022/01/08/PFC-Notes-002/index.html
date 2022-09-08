@@ -233,7 +233,7 @@
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年9月5日 晚上
+                  本文最后更新于：2022年9月8日 晚上
                 
               </p>
             
@@ -253,25 +253,32 @@
             <p>使用 Python 时，命令流或 Fish 代码是以字符串的形式作为参数使用的，具体在后面的 Python 部分介绍。</p>
           </div>
 
-<h2 id="PFC-模型生成"><a href="#PFC-模型生成" class="headerlink" title="PFC 模型生成"></a>PFC 模型生成</h2><h3 id="1-基本设置"><a href="#1-基本设置" class="headerlink" title="1.基本设置"></a>1.基本设置</h3><p>打开软件新建项目后，再新建一个<code>*.*dat</code>格式的 Datafile，即可开始编写模型代码。建立新模型前，如果内存中还保存着之前运行的模型或者函数，就有可能与新模型发生冲突，所以程序的开始一般用<code>model new</code>命令来清空程序内存，为建立新模型做准备。<br>接下来就是为新模型指定一个合适生成空间，能容纳下新模型即可，不宜过大。命令为<code>model domain</code>，其中<code>extent</code>关键字指明模型 x、y、z 方向上的范围，缺省就和前一项取相同范围；关键字<code>condition</code>指明颗粒超出<code>domain</code>后的操作，<code>destory</code>表示颗粒超出<code>domain</code>后就销毁，以上命令的具体说明可参见程序文档。<br>此外，由于 PFC 的颗粒是随机生成的，每次的结果都不同，为了模拟的可重复性和调试的准确性，需要在颗粒生成前为模型指定一个随机种子，命令为<code>model random</code>，一般设置为一个大于 10000 的正整数。</p>
+<h2 id="PFC-模型生成"><a href="#PFC-模型生成" class="headerlink" title="PFC 模型生成"></a>PFC 模型生成</h2><h3 id="1-基本设置"><a href="#1-基本设置" class="headerlink" title="1.基本设置"></a>1.基本设置</h3><p>打开软件新建项目后，再新建一个<code>*.*dat</code>格式的 Datafile，即可开始编写模型代码。建立新模型前，如果内存中还保存着之前运行的模型或者函数，就有可能与新模型发生冲突，所以程序的开始一般用<code>model new</code>命令来清空程序内存，为建立新模型做准备。<br>接下来就是为新模型指定一个合适生成空间，能容纳下新模型即可，不宜过大。命令为<code>model domain</code>，其中<code>extent</code>关键字指明模型<code>x</code>、<code>y</code>、<code>z</code>方向上的范围，缺省就和前一项取相同范围；关键字<code>condition</code>指明颗粒超出<code>domain</code>后的操作，<code>destory</code>表示颗粒超出<code>domain</code>后就销毁，以上命令的具体说明可参见程序文档。<br>此外，由于 PFC 的颗粒是随机生成的，每次的结果都不同，为了模拟的可重复性和调试的准确性，需要在颗粒生成前为模型指定一个随机种子，命令为<code>model random</code>，一般设置为一个大于 10000 的正整数。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">model new<br>model domain extent -1 1 condition destory<br>model random 10001<br></code></pre></div></td></tr></table></figure>
 
 <h3 id="2-约束设置"><a href="#2-约束设置" class="headerlink" title="2.约束设置"></a>2.约束设置</h3><p>模型的生成空间设置好后，就可以设置模型的物理结构了，通常是墙体的设置。PFC 6.0 中创建墙体有如下几种方式，具体使用参见程序文档中的相关命令说明：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">wall create - 连接一系列指定的点创建<br>wall generate - 以球体、平面等基本几何体创建<br>wall import - 导入外部 CAD 文件或从 Geometry 创建<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">wall create   # 连接一系列指定的点创建<br>wall generate # 以球体、平面等基本几何体创建<br>wall import   # 导入外部 CAD 文件或从 Geometry 创建<br></code></pre></div></td></tr></table></figure>
 
-<p>另外，PFC 6.0 自带与 FLAC 耦合，还可以使用<code>wall-structure create</code>命令以 FLAC 中的 <code>structure</code>单元为模板创建墙体。</p>
+<p>另外，PFC 6.0 自带与 FLAC 耦合，还可以使用<code>wall-structure create</code>命令以 FLAC 中的<code>structure</code>单元为模板创建墙体。</p>
 <h3 id="3-颗粒生成"><a href="#3-颗粒生成" class="headerlink" title="3.颗粒生成"></a>3.颗粒生成</h3><p>墙体设置好后就可以生成颗粒了，PFC 中的颗粒对象有 Ball 和 Clump。由多个 Ball 组成的刚性整体就是 Clump，它不会发生变形；而多个 Ball 通过一定的强度的黏结组合成的整体叫做 Cluster，当 Ball 间的黏结破坏后，Cluster 便退化为 Ball。<br>此外 PFC 中还有一类对象 Rigid Blocks —— 可以看作是填满 Ball 的具有封闭边界的小单元，一般用来模拟各种封闭的凸多面体/多边形。<br>这里主要介绍 Ball 和 Clump 的生成，因为其他两类对象我没用过 😂，命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">ball/clump create - 生成单个颗粒<br>ball/clump generate - 按孔隙率和粒径范围批量生成，颗粒间无重叠<br>ball/clump distribute - 按孔隙率和粒径范围批量生成，颗粒间有重叠<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">ball/clump create     # 生成单个颗粒<br>ball/clump generate   # 按孔隙率和粒径范围批量生成，颗粒间无重叠<br>ball/clump distribute # 按孔隙率和粒径范围批量生成，颗粒间有重叠<br></code></pre></div></td></tr></table></figure>
 
-<p><code>create</code> 命令主要用于需要精确控制颗粒半径和位置的情况，如柔性三轴中生成颗粒膜；<code>generate</code> 命令生成颗粒时会确保颗粒间无重叠，因此平衡后的孔隙率会略大于设定值；<code>distribute</code> 命令生成颗粒时不会检查颗粒是否重叠，导致生成后的颗粒间可能存在大量的重叠，产生较大的内力，因此成样后需要将颗粒充分地弹开，以减小不平衡力。<br>此外，还可以通过 Clump 模板生成 Clump 颗粒，这种方法需要首先创建 Clump 模板，命令如下，然后再配合 <code>generate</code> 或 <code>distribute</code> 命令的 <code>template(s)</code> 关键字指定要使用的模板就可以了。<br>一般生成颗粒时，我们还希望控制颗粒的级配，这可以通过 <code>distribute</code> 命令中的 <code>bin</code> 关键字实现，一个 bin 对应于一小段粒径范围；使用 <code>generate</code> 命令中的 <code>fish-distribution</code> 关键字还可以按自定义的 Fish 函数返回值确定颗粒粒径。</p>
-<h3 id="4-颗粒参数和接触模型设置"><a href="#4-颗粒参数和接触模型设置" class="headerlink" title="4.颗粒参数和接触模型设置"></a>4.颗粒参数和接触模型设置</h3><p>颗粒和墙体生成完毕后，需要设置颗粒和墙体的基本参数，如颗粒的密度、摩擦系数和墙体的速度等；另外还需要设置颗粒间以及颗粒和墙体间的接触模型——可以理解为颗粒相互作用时两者接触面上的力和弯矩等的计算规则。<br>在 PFC 中颗粒的基本参数包括两类，一类是颗粒内在的属性，如密度、速度、位移、受到的力和弯矩等，通过 <code>attribute</code> 命令设置；另一类是颗粒与接触相关的属性，如摩擦系数、法向刚度和切向刚度等，通过 <code>property</code> 命令设置。<br>PFC 中接触模型的设置有两种方式，首先是通过 CMAT (Contact Model Assign Table) 命令进行设置，命令格式如下。<code>default</code> 关键字表示设置默认的接触模型，<code>tpye</code> 关键字用来限制接触的类型，如颗粒与颗粒的 <code>ball-ball</code> 接触和颗粒与墙体的 <code>ball-facet</code> 接触等；<code>add</code> 关键字表示向接触模型表中添加一类接触模型，其后跟的整数越小，表明该接触模型的优先级越高。当有新的接触生成时，PFC 会优先遍历 <code>add</code> 命令设置的接触模型（有多个则根据其后数字的优先级来确定遍历顺序），如果新接触满足该接触模型的限制条件，则为新接触设置该接触模型，如果不满足则继续判断下一个接触模型，如果均不满足，则使用 <code>default</code> 命令设置接触模型。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">contact cmat default type ··· model ···<br>contact cmat add 1 model ···<br>contact cmat apply - 应用 CMAT 设置的接触<br></code></pre></div></td></tr></table></figure>
+<p><code>create</code>命令主要用于需要精确控制颗粒半径和位置的情况，如柔性三轴中生成颗粒膜；<code>generate</code>命令生成颗粒时会确保颗粒间无重叠，因此平衡后的孔隙率会略大于设定值；<code>distribute</code>命令生成颗粒时不会检查颗粒是否重叠，导致生成后的颗粒间可能存在大量的重叠，产生较大的内力，因此成样后需要将颗粒充分地弹开，以减小不平衡力。</p>
+<p>此外，还可以通过 Clump 模板生成 Clump 颗粒，这种方法需要首先创建 Clump 模板，然后再配合<code>generate</code>或<code>distribute</code>命令的<code>templates</code>关键字指定要使用的模板就可以了。</p>
+<p>一般生成颗粒时，我们还希望控制颗粒的级配，这可以通过<code>distribute</code>命令中的<code>bin</code>关键字实现，一个<code>bin</code>对应于一小段粒径范围；使用<code>generate</code>命令中的<code>fish-distribution</code>关键字还可以按自定义的 Fish 函数返回值确定颗粒粒径。</p>
+<h3 id="4-颗粒参数和接触模型设置"><a href="#4-颗粒参数和接触模型设置" class="headerlink" title="4.颗粒参数和接触模型设置"></a>4.颗粒参数和接触模型设置</h3><p>颗粒和墙体生成完毕后，需要设置颗粒和墙体的基本参数，如颗粒的密度、摩擦系数和墙体的速度等；另外还需要设置颗粒间以及颗粒和墙体间的接触模型——可以理解为颗粒相互作用时两者接触面上的力和弯矩等的计算规则。</p>
+<p>在 PFC 中颗粒的基本参数包括两类，一类是颗粒内在的属性，如密度、速度、位移、受到的力和弯矩等，通过<code>attribute</code>命令设置；另一类是颗粒与接触相关的属性，如摩擦系数、法向刚度和切向刚度等，通过<code>property</code>命令设置。</p>
+<p>PFC 中接触模型的设置有两种方式，首先是通过 CMAT (Contact Model Assign Table) 命令进行设置，命令格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">contact cmat default type ··· model ···<br>contact cmat add 1 model ···<br>contact cmat apply # 应用 CMAT 设置的接触<br></code></pre></div></td></tr></table></figure>
 
-<p>第二种方式是使用 <code>contact</code> 命令直接设置接触模型，用法如下。两种方式的区别在于：第二种方式仅对当前模型中存在的接触生效，而第一种方式对于模型之后新生成的接触也有效。</p>
+<p><code>default</code>关键字表示设置默认的接触模型，<code>tpye</code>关键字用来限制接触的类型，如颗粒与颗粒的<code>ball-ball</code>接触和颗粒与墙体的<code>ball-facet</code>接触等；<code>add</code>关键字表示向接触模型表中添加一类接触模型，其后跟的整数越小，表明该接触模型的优先级越高。当有新的接触生成时，PFC 会优先遍历<code>add</code>命令设置的接触模型（有多个则根据其后数字的优先级来确定遍历顺序），如果新接触满足该接触模型的限制条件，则为新接触设置该接触模型，如果不满足则继续判断下一个接触模型，如果均不满足，则使用<code>default</code>命令设置接触模型。</p>
+<p>第二种方式是使用<code>contact</code>命令直接设置接触模型，用法如下。两种方式的区别在于：第二种方式仅对当前模型中存在的接触生效，而第一种方式对于模型之后新生成的接触也有效。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">contact model/method/property ···<br></code></pre></div></td></tr></table></figure>
 
-<p>最后需要说的是，这里只是介绍了接触模型的基本设置方法，具体的命令使用说明可以参考官方文档。并且进行接触设置时通常会用到 Range 命令来限制要设定的范围，它是 PFC 中的一个很重要也很常用的命令，后面放到常用命令里说。</p>
-<h2 id="PFC-模型预平衡"><a href="#PFC-模型预平衡" class="headerlink" title="PFC 模型预平衡"></a>PFC 模型预平衡</h2><p>由于颗粒是随机在模型区域中生成的，因此颗粒生成完毕后模型内部的应力处于混乱的状态，并未达到完全平衡，不符合实际的试验条件。在 PFC 中一般通过不平衡力比（Unbalanced Force Ratio，PFC6.0 中关键字为 ratio-average，PFC5.0 中关键字为 aratio）来评价模型内部应力是否达到平衡，它是指模型中所有颗粒所受到的力的矢量和与这些力的标量和之比，一般当模型的不平衡力比求解到 1e-5 或更小就认为模型已经达到平衡状态了。<br>有些情况下，模型预平衡时不平衡力比无法收敛到 1e-5，而是在一个大于 1e-5 的值附近波动，这可能是因为模型中存在一些悬浮的颗粒，它们处于自由运动的状态，从而导致不平衡力不收敛，这种情况下可以删掉悬浮颗粒或者适当放大悬浮颗粒的半径再进行预平衡。预平衡耗时较长时，可以采取一些技巧来提高效率，比如对于孔隙率较大的模型给颗粒设置较小的摩擦系数，对于孔隙率较大的模型则不给颗粒设置摩擦系数。<br>最后，当颗粒是在由墙体围成的区域内生成时，预平衡前一般会先将颗粒的位置适当放缩，使所有颗粒位于墙体的内部，防止预平衡时有颗粒飞出墙体之外，导致不平衡力比不收敛，可以通过 multiply 关键字实现这个操作。</p>
+<p>最后需要说的是，这里只是介绍了接触模型的基本设置方法，具体的命令使用说明可以参考官方文档。并且进行接触设置时通常会用到<code>Range</code>命令来限制要设定的范围，它是 PFC 中的一个很重要也很常用的命令，后面放到常用命令里说。</p>
+<h2 id="PFC-模型预平衡"><a href="#PFC-模型预平衡" class="headerlink" title="PFC 模型预平衡"></a>PFC 模型预平衡</h2><p>由于颗粒是随机在模型区域中生成的，因此颗粒生成完毕后模型内部的应力处于混乱的状态，并未达到完全平衡，不符合实际的试验条件。在 PFC 中一般通过不平衡力比（Unbalanced Force Ratio，PFC6.0 中关键字为<code>ratio-average</code>，PFC5.0 中关键字为 aratio）来评价模型内部应力是否达到平衡，它是指模型中所有颗粒所受到的力的矢量和与这些力的标量和之比，一般当模型的不平衡力比求解到 1e-5 或更小就认为模型已经达到平衡状态了。</p>
+<p>有些情况下，模型预平衡时不平衡力比无法收敛到 1e-5，而是在一个大于 1e-5 的值附近波动，这可能是因为模型中存在一些悬浮的颗粒，它们处于自由运动的状态，从而导致不平衡力不收敛，这种情况下可以删掉悬浮颗粒或者适当放大悬浮颗粒的半径再进行预平衡。预平衡耗时较长时，可以采取一些技巧来提高效率，比如对于孔隙率较小的模型给颗粒设置适当大的摩擦系数，比如 0.5，对于孔隙率较大的模型则设置较小的摩擦系数。</p>
+<p>最后，当颗粒是在由墙体围成的区域内生成时，预平衡前一般会先将颗粒的位置适当放缩，使所有颗粒位于墙体的内部，防止预平衡时有颗粒飞出墙体之外，导致不平衡力比不收敛，可以通过<code>multiply</code>关键字实现这个操作。</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">ball attribute position multiply 0.95 range ···<br></code></pre></div></td></tr></table></figure>
 
             </div>
@@ -289,6 +296,8 @@
                 
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
                     
                       <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
                     
