@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,40 +9,49 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/common/favicon.png">
   <link rel="icon" href="/img/common/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="理解篇，PFC 6.0 编程">
   <meta name="author" content="Wang Hao">
   <meta name="keywords" content="">
+  
+    <meta name="description" content="理解篇，PFC 6.0 编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PFC 学习笔记-003">
+<meta property="og:url" content="https://wanghao6736.github.io/2022/09/07/PFC-Notes-003/index.html">
+<meta property="og:site_name" content="Hao&#39;s Blog">
+<meta property="og:description" content="理解篇，PFC 6.0 编程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wanghao6736.github.io/img/post/post11.jpg">
+<meta property="article:published_time" content="2022-09-07T08:21:38.000Z">
+<meta property="article:modified_time" content="2022-09-10T11:59:19.007Z">
+<meta property="article:author" content="Wang Hao">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wanghao6736.github.io/img/post/post11.jpg">
+  
+  
   
   <title>PFC 学习笔记-003 - Hao&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/night-owl.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -51,15 +60,46 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"wanghao6736.github.io","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wanghao6736.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -68,11 +108,17 @@
 
 
 <body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Hao's Blog</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Hao&#39;s Blog</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -144,15 +190,29 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -161,60 +221,74 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/common/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="PFC 学习笔记-003">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-09-07 16:21" pubdate>
-        2022年9月7日 下午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      3.9k 字
-    </span>
   
 
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      30
-       分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/common/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="PFC 学习笔记-003"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Wang Hao
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2022-09-07 16:21" pubdate>
+          2022年9月7日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          6.8k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          12 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -223,34 +297,52 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">PFC 学习笔记-003</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年9月8日 晚上
+                  
+                    本文最后更新于：2022年9月10日 晚上
+                  
                 
               </p>
             
-            <div class="markdown-body">
-              <p>理解篇，PFC 6.0 编程</p>
+            
+              <div class="markdown-body">
+                
+                <p>理解篇，PFC 6.0 编程</p>
 <span id="more"></span>
 
 <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><a href="https://wanghao6736.github.io/2022/01/08/PFC-Notes-002/">上篇笔记</a>说到<code>PFC 5.0</code>后的版本支持命令流、<code>Fish</code>和<code>Python</code>三种方式进行编程，这篇笔记就来谈谈我对<code>PFC 6.0</code>中这三种编程方式的理解。<code>PFC</code>建模其实就是通过编程建立不同类型的对象，这些对象有的是<code>itasca</code>系列软件通用的，如<code>model</code>，<code>geometry</code>，<code>group</code>等，有的则是<code>PFC</code>独有的，如<code>ball</code>，<code>clump</code>，<code>contact</code>等。通用的对象一般具有工具属性，用于辅助模型建立或者模型数据记录和导出等，<code>PFC</code>独有的对象则是我们建模的主体，它们的属性、行为和相互作用是我们编程的重点。</p>
 <p>对于建模方式，通过在 PFC 默认的控制台<code>console</code>中一条一条地输入命令的方式显然不实际，一般是将命令按顺序写入文本文件（脚本）中，然后程序再自动按顺序运行；默认的控制台只能用于输入命令或者<a href="#Fish-%E8%AF%AD%E5%8F%A5%E4%B8%8E%E5%91%BD%E4%BB%A4%E6%B5%81%E5%B5%8C%E5%A5%97">嵌入的</a><code>Fish</code>语句，对于<code>python</code>，<code>PFC 6.0</code>内置了<code>ipython</code>控制台，支持<code>tab</code>命令自动补全，使用起来很方便。</p>
 <h1 id="命令流建模"><a href="#命令流建模" class="headerlink" title="命令流建模"></a>命令流建模</h1><h2 id="基本语法格式"><a href="#基本语法格式" class="headerlink" title="基本语法格式"></a>基本语法格式</h2><p>命令流是<code>PFC</code>建模的核心方式，<code>PFC</code>中的通用对象和大部分独有对象只能通过命令流的方式来创建。<code>PFC</code>的命令在手册里都有详细的描述，使用时可以提前查阅。我个人认为这些命令可以粗略地分为两类，一类为操作类命令，即对一个对象进行某种操作，语法格式为 “对象 + 操作”，如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">ball delete ; 删除所有 ball<br>program return ; 退出程序<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs batch">ball delete ; 删除所有 ball<br>program return ; 退出程序<br></code></pre></td></tr></table></figure>
 
 <p>另一类为赋值类命令，即对对象的某一属性进行赋值，语法格式为 “对象 + 属性 + 值”，如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">ball attribute velocity 0 0 0 ; 设置 ball 的速度为 (0, 0, 0)<br>ball group &quot;sand&quot; ; 将 ball 分到 &quot;sand&quot; 组中<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs batch">ball attribute velocity 0 0 0 ; 设置 ball 的速度为 (0, 0, 0)<br>ball group &quot;sand&quot; ; 将 ball 分到 &quot;sand&quot; 组中<br></code></pre></td></tr></table></figure>
 
 <p>除此之外，<code>PFC</code>的大多数命令都具有层级结构，即一个命令下还有二级命令，典型的如：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">contact cmat default model xxx ... ; 这里 xxx 为占位<br>                    method defomability emod xxx kratio xxx &amp;<br>                    property fric xxx<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs batch">contact cmat default model xxx ... ; 这里 xxx 为占位<br>                    method defomability emod xxx kratio xxx &amp;<br>                    property fric xxx<br></code></pre></td></tr></table></figure>
 
 <p>可以看到，<code>model</code>命令下有二级命令<code>method</code>和<code>property</code>，<code>method</code>又有二级命令<code>deformability</code>，二级命令还有自己的下一级命令，具体的层级关系可以查阅手册中的命令描述。这句命令可以这样理解：首先指定操作对象，即接触模型赋值表<code>cmat</code>的<code>default</code>槽，设置该槽的接触模型<code>model</code>；然后再将<code>model</code>作为操作对象，先对其<code>defomability</code>方法 (<code>method</code>) 进行设置，包括对<code>emod</code>和<code>kratio</code>进行赋值，接着对其<code>fric</code>属性 (<code>property</code>) 进行赋值。</p>
 <div class="note note-info">
@@ -258,19 +350,19 @@
           </div>
 
 <h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><h3 id="group"><a href="#group" class="headerlink" title="group"></a>group</h3><p>为了方便操作和管理对象，通常会对具有某一共同性质的对象进行分组，这就是<code>group</code>命令的作用，<code>group</code>下还有二级命令<code>slot</code>，可以将同一组 (<code>group</code>) 中的部分对象分入不同的槽 (<code>slot</code>)，进行更加细致的区分。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">ball group &quot;sand&quot; slot &quot;fines&quot;  ; 粉砂<br>ball group &quot;sand&quot; slot &quot;coarse&quot; ; 粗砂<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs batch">ball group &quot;sand&quot; slot &quot;fines&quot;  ; 粉砂<br>ball group &quot;sand&quot; slot &quot;coarse&quot; ; 粗砂<br></code></pre></td></tr></table></figure>
 
 <h3 id="range"><a href="#range" class="headerlink" title="range"></a>range</h3><p>在建模时，常常需要对一类对象中满足某一条件的对象进行操作，而不是对一类对象中的所有对象进行操作，仅限定要操作的对象范围，这就是<code>range</code>命令的作用，<code>range</code>命令在建模的过程中非常常用，使用时在需要限定范围的命令后加上<code>range</code>关键字和限定条件即可。<code>range</code>命令后的限定条件通常是某些属性范围，可以在手册中查看详细的描述，简单示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">range group &quot;g1&quot;     ; 对属于 &quot;g1&quot; 组的对象进行操作<br>range group &quot;g1&quot; not ; 对不属于 &quot;g1&quot; 组的对象进行操作<br>range position-x 0 1 ; 对 &quot;x&quot; 坐标在 (0, 1) 的对象进行操作<br>range union group &quot;g2&quot; position-z 0 1 ; 对属于 &quot;g2&quot; 组或 &quot;z&quot; 坐标在 (0, 1) 的对象进行操作<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs batch">range group &quot;g1&quot;     ; 对属于 &quot;g1&quot; 组的对象进行操作<br>range group &quot;g1&quot; not ; 对不属于 &quot;g1&quot; 组的对象进行操作<br>range position-x 0 1 ; 对 &quot;x&quot; 坐标在 (0, 1) 的对象进行操作<br>range union group &quot;g2&quot; position-z 0 1 ; 对属于 &quot;g2&quot; 组或 &quot;z&quot; 坐标在 (0, 1) 的对象进行操作<br></code></pre></td></tr></table></figure>
 
 <h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><p>为了观察模型的变化，我们需要在模型执行的过程中对我们关心的状态量进行监测，如颗粒或墙体的受力情况和位移情况等等。<code>PFC</code>除了提供通用的<code>history</code>命令外，还为每个对象提供了<code>history</code>命令，在监测时推荐后者，更加符合直觉，前者更适合用来对已有的<code>history</code>进行整体操作，简单示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">history name xx xxx  ; 通用的 history 命令进行监测<br>history interval 50  ; 使用通用的 history 命令设置每隔 50 时步记录一次数据<br>history delete       ; 删除所有 history<br>ball history id 1 velocity-z id 2 ; 使用 ball 对象的 history 命令监测 id 为 2 的颗粒的 z 向速度，该 history 的 id 为 1<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs batch">history name xx xxx  ; 通用的 history 命令进行监测<br>history interval 50  ; 使用通用的 history 命令设置每隔 50 时步记录一次数据<br>history delete       ; 删除所有 history<br>ball history id 1 velocity-z id 2 ; 使用 ball 对象的 history 命令监测 id 为 2 的颗粒的 z 向速度，该 history 的 id 为 1<br></code></pre></td></tr></table></figure>
 
 <h3 id="plot"><a href="#plot" class="headerlink" title="plot"></a>plot</h3><p><code>plot</code>是用于绘图的命令，但通过代码编写绘图程序比较繁琐，不直观，一般直接通过<code>PFC</code>的图形化界面来绘制<code>history</code>命令监测的数据的图像，<code>plot</code>命令通常用来导出数据。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">plot &quot;xxx&quot; export csv filename &quot;yyy.csv&quot;    ; 将 plot xxx 中的数据导出到名为 yyy.csv 的 csv 文件中<br>plot &quot;xxx&quot; export bitmap filename &quot;yyy.png&quot; ; 将 plot xxx 中的图像导出到名为 yyy.png 的 png 图片中<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs batch">plot &quot;xxx&quot; export csv filename &quot;yyy.csv&quot;    ; 将 plot xxx 中的数据导出到名为 yyy.csv 的 csv 文件中<br>plot &quot;xxx&quot; export bitmap filename &quot;yyy.png&quot; ; 将 plot xxx 中的图像导出到名为 yyy.png 的 png 图片中<br></code></pre></td></tr></table></figure>
 
 <h3 id="program"><a href="#program" class="headerlink" title="program"></a>program</h3><p><code>program</code>命令用于控制程序的运行和调用：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">program call &quot;xxx.dat&quot; suppress ; 调用 &quot;xxx.dat&quot; 文件<br>program system &quot;mkdir a&quot; ; 执行系统命令，对于 windows 系统，相当于在命令行中执行 &quot;mkdir a&quot;，即创建文件夹 &quot;a&quot;<br>program pasue     ; 暂定程序，控制台输入 program continue 继续运行<br>program pasue key ; 暂定程序，按任意键继续<br>program return    ; 结束程序<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs batch">program call &quot;xxx.dat&quot; suppress ; 调用 &quot;xxx.dat&quot; 文件<br>program system &quot;mkdir a&quot; ; 执行系统命令，对于 windows 系统，相当于在命令行中执行 &quot;mkdir a&quot;，即创建文件夹 &quot;a&quot;<br>program pasue     ; 暂定程序，控制台输入 program continue 继续运行<br>program pasue key ; 暂定程序，按任意键继续<br>program return    ; 结束程序<br></code></pre></td></tr></table></figure>
 
 <div class="note note-info">
             <p><code>suppress</code>关键字表示关闭命令回显，即被调用的文件内的代码不会在控制台中打印。</p>
@@ -284,13 +376,13 @@
 <li>4.无法创建<code>Itasca</code>系列软件通用对象和大部分<code>PFC</code>独有对象，但基本可以读取和操作这些对象</li>
 </ul>
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p><code>Fish</code>语言的语法比较简单，容易上手，和<code>Python</code>有一点类似：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs fish">fish define foo(a, b) ; 带参数函数定义，也可以去掉括号定义无参函数<br>    a = 1 ; 声明和定义全局变量，等价于 global a = 1<br>    global b = 2<br><br>    if a # b then ; Fish 中，不等于用 &quot;#&quot; 号表示<br>        local c = a + b ; 声明和定义局部变量，作用域为其所在的命令对，这里是 if ··· endif<br>        io.out(&quot;a != b&quot;)<br>    endif<br><br>    foo = a + b ; 函数名可以赋值，相当于函数返回值，需要注意不能多次赋值，那样相当于循环调用 foo 函数<br>end<br>@foo(1, 2) ; 在函数外需要使用 &quot;@&quot; 符号调用 Fish 函数<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs fish">fish define foo(a, b) ; 带参数函数定义，也可以去掉括号定义无参函数<br>    a = 1 ; 声明和定义全局变量，等价于 global a = 1<br>    global b = 2<br><br>    if a # b then ; Fish 中，不等于用 &quot;#&quot; 号表示<br>        local c = a + b ; 声明和定义局部变量，作用域为其所在的命令对，这里是 if ··· endif<br>        io.out(&quot;a != b&quot;)<br>    endif<br><br>    foo = a + b ; 函数名可以赋值，相当于函数返回值，需要注意不能多次赋值，那样相当于循环调用 foo 函数<br>end<br>@foo(1, 2) ; 在函数外需要使用 &quot;@&quot; 符号调用 Fish 函数<br></code></pre></td></tr></table></figure>
 
 <h2 id="Fish-方法调用"><a href="#Fish-方法调用" class="headerlink" title="Fish 方法调用"></a>Fish 方法调用</h2><p>与常见的面向对象语言不同，<code>Fish</code>语言中某类对象调用其方法的方式为 “类名.方法(对象指针/id/name)”：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs fish">[mp1 = measure.find(1)] ; 查找 id 为 1 的测量圆<br>measure.porosity(mp1)   ; 调用 measure 类的 porosity 方法查看 mp1 的孔隙率<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs fish">[mp1 = measure.find(1)] ; 查找 id 为 1 的测量圆<br>measure.porosity(mp1)   ; 调用 measure 类的 porosity 方法查看 mp1 的孔隙率<br></code></pre></td></tr></table></figure>
 
 <h2 id="Fish-语句与命令流嵌套"><a href="#Fish-语句与命令流嵌套" class="headerlink" title="Fish 语句与命令流嵌套"></a>Fish 语句与命令流嵌套</h2><p>在<code>PFC</code>中，新建了一个<code>Data file</code>后，默认是写入命令流语句或者定义<code>Fish</code>函数，想要写入单独的<code>Fish</code>语句则需要将该语句用 “[]” 括起来；在<code>Fish</code>函数中使用命令流时，需要将命令流写在<code>command ··· endcommand</code>中。以下为简单的示例，仅作说明，实际使用时会复杂一些：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs fish">[rad = 1.0] ; Fish 函数外的 Fish 变量/语句需要用 &quot;[]&quot; 包起来<br>[pos = vector((0, 0, 0))] ; 这里调用了 vector 类的构造函数，传入参数为 (0, 0, 0)<br>def foo     ; fish define 可简写为 def<br>    command ; 命令流与 Fish 函数嵌套<br>        ball create id 1 radius [rad] position [pos] ; Fish 变量与命令嵌套<br>    endcommand<br>end<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs fish">[rad = 1.0] ; Fish 函数外的 Fish 变量/语句需要用 &quot;[]&quot; 包起来<br>[pos = vector((0, 0, 0))] ; 这里调用了 vector 类的构造函数，传入参数为 (0, 0, 0)<br>def foo     ; fish define 可简写为 def<br>    command ; 命令流与 Fish 函数嵌套<br>        ball create id 1 radius [rad] position [pos] ; Fish 变量与命令嵌套<br>    endcommand<br>end<br></code></pre></td></tr></table></figure>
 
 <p>此外，<code>Fish</code>函数中嵌套的命令不能是<code>model restore</code>或者<code>model new</code>，因为前者会用<code>.sav</code>文件中的<code>Fish</code>状态（函数、变量等）覆盖当前的<code>Fish</code>状态，后者则会清空模型内存，包括当前的<code>Fish</code>状态，两者都会和现有<code>Fish</code>状态产生冲突，因此不能在<code>Fish</code>函数中使用，这有点穿越到过去杀了自己的感觉 🤪。</p>
 <div class="note note-warning">
@@ -298,10 +390,10 @@
           </div>
 
 <h2 id="Fish-变量变化监测"><a href="#Fish-变量变化监测" class="headerlink" title="Fish 变量变化监测"></a>Fish 变量变化监测</h2><p>前面说过可以用<code>History</code>命令监测<code>PFC</code>中对象的属性，但有时候我们需要用<code>Fish</code>函数来计算模型中的各种参数，最后得到结果也保存在<code>Fish</code>变量中，这时就需要对该变量进行监测，对此，<code>PFC</code>提供了<code>fish history</code>命令，简单示例如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs fish">fish history @a ; 监测变量 a<br>fish history name &quot;b&quot; @b ; 监测变量 a，并将该 history 命名为 &quot;b&quot;<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs fish">fish history @a ; 监测变量 a<br>fish history name &quot;b&quot; @b ; 监测变量 a，并将该 history 命名为 &quot;b&quot;<br></code></pre></td></tr></table></figure>
 
 <h2 id="常用-Fish-方法"><a href="#常用-Fish-方法" class="headerlink" title="常用 Fish 方法"></a>常用 Fish 方法</h2><p>在<code>PFC</code>中，每一类对象都有自己的专属<code>Fish</code>方法，此外<code>PFC</code>还提供了一系列工具类库，如<code>math</code>、<code>array</code>、<code>vector</code>等，所有<code>Fish</code>函数在<code>PFC</code>的手册中都有详细的说明，使用时可以根据需求去查找参考。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs fish">ball.find()    ; 查找类函数<br>ball.group(bp) = &quot;sand&quot;   ; 设置属性类函数<br>gp = ball.group(bp)       ; 读取属性类函数<br>contact.list   ; 获取属性类方法<br>math.sqrt()    ; 计算类函数<br>array / vector ; 数据结构类<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs fish">ball.find()    ; 查找类函数<br>ball.group(bp) = &quot;sand&quot;   ; 设置属性类函数<br>gp = ball.group(bp)       ; 读取属性类函数<br>contact.list   ; 获取属性类方法<br>math.sqrt()    ; 计算类函数<br>array / vector ; 数据结构类<br></code></pre></td></tr></table></figure>
 
 <div class="note note-info">
             <p><code>PFC</code>独有对象的<code>Fish</code>函数大多是读写一致的，如<code>ball.group()</code>方法，它在等号左边就是写，即设置分组，在等号右边就是读，即读取分组。</p>
@@ -309,24 +401,24 @@
 
 <h1 id="Python-建模"><a href="#Python-建模" class="headerlink" title="Python 建模"></a>Python 建模</h1><p><code>PFC 6.0</code>开始支持<code>Python</code>脚本，就个人使用经验来看，<code>Python</code>脚本适合用于程序的自动化运行以及程序运行结果数据的处理，对于模型的生成和模型的各种细节配置，还是得用命令流和<code>Fish</code>语言。和<code>Fish</code>语言一样，使用<code>Python</code>同样无法创建<code>Itasca</code>系列软件通用对象和大部分<code>PFC</code>独有对象，但基本可以读取和操作这些对象。</p>
 <h2 id="在-PFC-中使用-Python"><a href="#在-PFC-中使用-Python" class="headerlink" title="在 PFC 中使用 Python"></a>在 PFC 中使用 Python</h2><p>Itasca 将其提供的对象和方法都封装在<code>itasca</code>这个包里，因此使用时需要先<code>import</code>这个包：</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-comment"># pfc.py</span><br><span class="hljs-keyword">import</span> itasca <span class="hljs-keyword">as</span> it <span class="hljs-comment"># 导入包，设置别名为 it，方便后续使用</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># pfc.py</span><br><span class="hljs-keyword">import</span> itasca <span class="hljs-keyword">as</span> it <span class="hljs-comment"># 导入包，设置别名为 it，方便后续使用</span><br></code></pre></td></tr></table></figure>
 
 <p>当前的 Python 状态在执行了<code>model restore</code>或者<code>model new</code>命令后会被清空，要防止这种情况需要设置：</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">it.command(<span class="hljs-string">&quot;python-reset-state false&quot;</span>)<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">it.command(<span class="hljs-string">&quot;python-reset-state false&quot;</span>)<br></code></pre></td></tr></table></figure>
 
 <p>这样就可以在使用<code>model restore</code>和<code>model new</code>命令的同时保留<code>Python</code>状态了，个人猜测<code>Python</code>状态可以通过以上命令独立于模型数据之外，而<code>Fish</code>状态始终和模型数据绑定，所以前者可以使用<code>model restore</code>和<code>model new</code>命令，后者则不行。</p>
 <h2 id="itasca-包中的类和方法"><a href="#itasca-包中的类和方法" class="headerlink" title="itasca 包中的类和方法"></a>itasca 包中的类和方法</h2><p>虽然<code>Python</code>不能创建大多数<code>PFC</code>中的对象，但<code>itasca</code>包中提供了一系列方法来获取和操作这些对象，这些方法可以分为类方法和对象方法，前者是对属于某个类的所有对象进行操作，后者则是对某个类的某个对象进行操作。</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">it.ball.count()  <span class="hljs-comment"># 类方法，获取 ball 的数目</span><br>ball = it.ball.find(<span class="hljs-number">1</span>) <span class="hljs-comment"># 类方法，查找指定 ball</span><br>ball.density()   <span class="hljs-comment"># 对象方法，获取属性</span><br>ball.set_density() <span class="hljs-comment"># 对象方法，设置属性</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs python">it.ball.count()  <span class="hljs-comment"># 类方法，获取 ball 的数目</span><br>ball = it.ball.find(<span class="hljs-number">1</span>) <span class="hljs-comment"># 类方法，查找指定 ball</span><br>ball.density()   <span class="hljs-comment"># 对象方法，获取属性</span><br>ball.set_density() <span class="hljs-comment"># 对象方法，设置属性</span><br></code></pre></td></tr></table></figure>
 
 <div class="note note-warning">
             <p>与<code>Fish</code>不同，<code>Python</code>中提供的方法不是读写一致的，写命令通常以 “set” 开头。</p>
           </div>
 
 <h2 id="Python-与命令流和-Fish-交互"><a href="#Python-与命令流和-Fish-交互" class="headerlink" title="Python 与命令流和 Fish 交互"></a>Python 与命令流和 Fish 交互</h2><p>在 PFC 中，Python 与命令流交互很简单，用一个<code>command()</code>方法就可以了，与<code>Fish</code>进行交互则通过<code>fish</code>这个类来实现：</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">it.command(<span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">model new</span><br><span class="hljs-string">model domain extent -5e-2 6e-2 -6e-2 5e-2 -5e-2 5e-2</span><br><span class="hljs-string">model cmat default model linear property kn 1e1 dp_nratio 0.2</span><br><span class="hljs-string"></span><br><span class="hljs-string">[den = 2600]</span><br><span class="hljs-string">ball generate cubic box -0.02375 0.02375 rad 1.25e-3</span><br><span class="hljs-string">ball attr dens [den]</span><br><span class="hljs-string">&quot;&quot;&quot;</span>)<br>it.fish.get(<span class="hljs-string">&quot;a&quot;</span>) <span class="hljs-comment"># 读取 Fish 变量 a</span><br>it.fish.<span class="hljs-built_in">set</span>(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-number">11</span>) <span class="hljs-comment"># 设置 Fish 变量 a 的值为 11</span><br>it.fish.call_function() <span class="hljs-comment"># 调用 Fish 函数</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs python">it.command(<span class="hljs-string">&quot;&quot;&quot;</span><br><span class="hljs-string">model new</span><br><span class="hljs-string">model domain extent -5e-2 6e-2 -6e-2 5e-2 -5e-2 5e-2</span><br><span class="hljs-string">model cmat default model linear property kn 1e1 dp_nratio 0.2</span><br><span class="hljs-string"></span><br><span class="hljs-string">[den = 2600]</span><br><span class="hljs-string">ball generate cubic box -0.02375 0.02375 rad 1.25e-3</span><br><span class="hljs-string">ball attr dens [den]</span><br><span class="hljs-string">&quot;&quot;&quot;</span>)<br>it.fish.get(<span class="hljs-string">&quot;a&quot;</span>) <span class="hljs-comment"># 读取 Fish 变量 a</span><br>it.fish.<span class="hljs-built_in">set</span>(<span class="hljs-string">&quot;a&quot;</span>, <span class="hljs-number">11</span>) <span class="hljs-comment"># 设置 Fish 变量 a 的值为 11</span><br>it.fish.call_function() <span class="hljs-comment"># 调用 Fish 函数</span><br></code></pre></td></tr></table></figure>
 
 <h2 id="使用第三方库"><a href="#使用第三方库" class="headerlink" title="使用第三方库"></a>使用第三方库</h2><p>Python 的强大除了语法简单外，还在于其丰富的第三方库，在<code>ipython</code>控制台中使用<code>pip</code>命令安装即可，如：</p>
-<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python">pip install pandas <span class="hljs-comment"># 安装数据处理库 pandas</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs python">pip install pandas <span class="hljs-comment"># 安装数据处理库 pandas</span><br></code></pre></td></tr></table></figure>
 
 <p><code>PFC 6.0</code>还内置了<code>PySide2</code>库，可以借助其编写图形化的交互窗口，自由度非常高。</p>
 <h2 id="Python-的使用场景"><a href="#Python-的使用场景" class="headerlink" title="Python 的使用场景"></a>Python 的使用场景</h2><p>对于<code>PFC</code>提供的三种建模方式，个人认为命令流和<code>Fish</code>语言适合用来直接建模，而<code>Python</code>语言则适合对模型中的各种数据进行处理或者进行流程控制。我觉得典型的使用场景如下：</p>
@@ -341,56 +433,129 @@
 <p>而通过<code>Python</code>就可以使用循环在一次模拟结束后根据设定的参数自动更改模拟参数，再接着跑，使不同的模拟过程连续。而且第二组模拟的参数也可以通过第一组模拟的结果数据来进行确定，这可以大大提高参数标定的效率。</p>
 <h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>总的来说，<code>PFC</code>的三种建模方式各有优劣，需根据需要综合起来使用，比如生成位置随机的颗粒簇时，通过命令流就可以方便的实现，而通过<code>Fish</code>或者<code>Python</code>语言实现就比较麻烦；但对于需要一个一个地生成特定位置排列的颗粒时，使用命令的生成速度就远不如<code>Fish</code>或<code>Python</code>语言的生成速度了。</p>
 <p>另外，学习这三种建模方式最好的方式就是阅读程序自带的手册，它是与软件配套的，一般不会出现命令不适配的情况，并且手册里提供了各种命令的详细用法，也有一些示例可以参考，这样上手会比上网找教程快很多，程序自带手册打开方式为点击软件菜单栏：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">Help &gt; Help # 在软件内部右侧面板打开手册<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs batch">Help &gt; Help # 在软件内部右侧面板打开手册<br></code></pre></td></tr></table></figure>
 
 <p>默认是在软件内部打开手册，可以通过以下设置改为在浏览器中打开手册：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs batch">Tools &gt; General &gt; show help in default web browser # 设置为在浏览器里打开手册<br></code></pre></div></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs batch">Tools &gt; General &gt; show help in default web browser # 设置为在浏览器里打开手册<br></code></pre></td></tr></table></figure>
 
+<p>最后，学习<code>PFC</code>建议参考官方在线手册<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="PFC 官方在线手册，如[PFC 7.0 Documentation](http://docs.itascacg.com/pfc700/pfc/docproject/source/manual/pfchome.html)，注意版本对应">[1]</span></a></sup>、关注一些技术博主<sup id="fnref:2" class="footnote-ref"><a href="#fn:2" rel="footnote"><span class="hint--top hint--rounded" aria-label="微信公众号：[超级大的 lobby](https://mp.weixin.qq.com/s/rzerfhPt9FYh0pZFFtZU9Q)">[2]</span></a></sup>、购买相关的书籍<sup id="fnref:3" class="footnote-ref"><a href="#fn:3" rel="footnote"><span class="hint--top hint--rounded" aria-label="PFC 相关书籍：[颗粒流（PFC5.0）数值模拟技术及应用](https://item.jd.com/12424554.html)">[3]</span></a></sup>和加入相关的学习群<sup id="fnref:4" class="footnote-ref"><a href="#fn:4" rel="footnote"><span class="hint--top hint--rounded" aria-label="QQ 学习群：`305143751`、`221013772`">[4]</span></a></sup>，当然最推荐的还是学习官方的手册。</p>
 <h1 id="学习资料"><a href="#学习资料" class="headerlink" title="学习资料"></a>学习资料</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>PFC 官方在线手册，如<a target="_blank" rel="noopener" href="http://docs.itascacg.com/pfc700/pfc/docproject/source/manual/pfchome.html">PFC 7.0 Documentation</a>，注意版本对应
 <a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:2" class="footnote-text"><span>微信公众号：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/rzerfhPt9FYh0pZFFtZU9Q">超级大的 lobby</a>
 <a href="#fnref:2" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:3" class="footnote-text"><span>PFC 相关书籍：<a target="_blank" rel="noopener" href="https://item.jd.com/12424554.html">颗粒流（PFC5.0）数值模拟技术及应用</a>
 <a href="#fnref:3" rev="footnote" class="footnote-backref"> ↩</a></span></span></li><li><span id="fn:4" class="footnote-text"><span>QQ 学习群：<code>305143751</code>、<code>221013772</code>
 <a href="#fnref:4" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E7%A6%BB%E6%95%A3%E5%85%83/">离散元</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E6%95%99%E7%A8%8B/">教程</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
-                    
-                  </div>
                 
               </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E7%A6%BB%E6%95%A3%E5%85%83/" class="category-chain-item">离散元</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%99%E7%A8%8B/">#教程</a>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    版权声明：自由转载-非商用-可衍生-保持署名 | <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-NC-SA 4.0 </a>
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>PFC 学习笔记-003</div>
+      <div>https://wanghao6736.github.io/2022/09/07/PFC-Notes-003/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wang Hao</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2022年9月7日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                <i class="iconfont icon-nc"></i>
+              </span>
+              </a>
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                <i class="iconfont icon-sa"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2022/09/09/Website-Deployment/" title="Halo 动态博客搭建和代理配置">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Halo 动态博客搭建和代理配置</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/05/Math-And-Images/">
+                      <a href="/2022/09/05/Math-And-Images/" title="Hexo 数学公式和文章图片管理">
                         <span class="hidden-mobile">Hexo 数学公式和文章图片管理</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -406,25 +571,116 @@
         </div>
       </div>
     </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-left: -1rem">
     
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="离散元"
+        id="heading-a51927e3f412fabcd98c05c23875f663" role="tab" data-toggle="collapse" href="#collapse-a51927e3f412fabcd98c05c23875f663"
+        aria-expanded="true"
+      >
+        离散元
+        <span class="list-group-count">(3)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-a51927e3f412fabcd98c05c23875f663"
+           role="tabpanel" aria-labelledby="heading-a51927e3f412fabcd98c05c23875f663">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2021/11/16/PFC-Notes-001/" title="PFC 学习笔记-001"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">PFC 学习笔记-001</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/01/08/PFC-Notes-002/" title="PFC 学习笔记-002"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">PFC 学习笔记-002</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2022/09/07/PFC-Notes-003/" title="PFC 学习笔记-003"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">PFC 学习笔记-003</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
 </div>
 
-      </div>
-    
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
 
 
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -443,32 +699,34 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
@@ -484,11 +742,26 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
 
 
   
@@ -497,85 +770,88 @@
 
 
 
+
   
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
 
 
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script>
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <script>Fluid.plugins.codeWidget();</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
 
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      $('#local-search-input').on('click', function() {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      });
-      $('#modalSearch').on('shown.bs.modal', function() {
-        $('#local-search-input').focus();
-      });
-    })()
-  </script>
 
 
 
 
 
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>

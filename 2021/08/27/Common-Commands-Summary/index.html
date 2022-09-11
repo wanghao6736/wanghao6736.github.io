@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+<html lang="zh-CN" data-default-color-scheme=auto>
 
 
 
@@ -9,40 +9,48 @@
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/img/common/favicon.png">
   <link rel="icon" href="/img/common/favicon.png">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="Linux系统和Windows系统下的常用shell命令汇总">
   <meta name="author" content="Wang Hao">
   <meta name="keywords" content="">
+  
+    <meta name="description" content="Linux系统和Windows系统下的常用shell命令汇总">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常用系统命令总结">
+<meta property="og:url" content="https://wanghao6736.github.io/2021/08/27/Common-Commands-Summary/index.html">
+<meta property="og:site_name" content="Hao&#39;s Blog">
+<meta property="og:description" content="Linux系统和Windows系统下的常用shell命令汇总">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://wanghao6736.github.io/img/post/post6.jpg">
+<meta property="article:published_time" content="2021-08-27T04:49:23.000Z">
+<meta property="article:modified_time" content="2022-09-05T11:56:03.020Z">
+<meta property="article:author" content="Wang Hao">
+<meta property="article:tag" content="笔记">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wanghao6736.github.io/img/post/post6.jpg">
+  
+  
   
   <title>常用系统命令总结 - Hao&#39;s Blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
 
+
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+
   <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
 
-  
-    
-    
-      
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/night-owl.min.css" />
-    
-  
-
-  
-    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-  
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
 
 
 
@@ -51,15 +59,46 @@
 
 <link  rel="stylesheet" href="/css/main.css" />
 
-<!-- 自定义样式保持在最底部 -->
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
 
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"wanghao6736.github.io","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"wanghao6736.github.io","root":"/","version":"1.9.2","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"left","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":true,"follow_dnt":true,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+  
 <!-- hexo injector head_end start -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
@@ -68,11 +107,17 @@
 
 
 <body>
-  <header style="height: 70vh;">
-    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
-    <a class="navbar-brand"
-       href="/">&nbsp;<strong>Hao's Blog</strong>&nbsp;</a>
+    <a class="navbar-brand" href="/">
+      <strong>Hao&#39;s Blog</strong>
+    </a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -144,15 +189,29 @@
             </li>
           
         
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;</a>
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              &nbsp;<i class="iconfont icon-search"></i>&nbsp;
+            </a>
           </li>
+          
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -161,60 +220,74 @@
   </div>
 </nav>
 
-    <div class="banner" id="banner" parallax=true
-         style="background: url('/img/common/default.png') no-repeat center center;
-           background-size: cover;">
-      <div class="full-bg-img">
-        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="常用系统命令总结">
-              
-            </span>
-
-            
-              <div class="mt-3">
-  
-  
-    <span class="post-meta">
-      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-08-27 12:49" pubdate>
-        2021年8月27日 下午
-      </time>
-    </span>
-  
-</div>
-
-<div class="mt-1">
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-chart"></i>
-      538 字
-    </span>
   
 
-  
-    
-    <span class="post-meta mr-2">
-      <i class="iconfont icon-clock-fill"></i>
-      
-      
-      4
-       分钟
-    </span>
-  
-
-  
-  
-</div>
-
-            
-          </div>
-
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/common/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="常用系统命令总结"></span>
           
         </div>
+
+        
+          
+  <div class="mt-3">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-author" aria-hidden="true"></i>
+        Wang Hao
+      </span>
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2021-08-27 12:49" pubdate>
+          2021年8月27日 下午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          1.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          3 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
       </div>
+
+      
     </div>
+  </div>
+</div>
+
+</div>
+
   </header>
 
   <main>
@@ -223,82 +296,166 @@
 
 <div class="container-fluid nopadding-x">
   <div class="row nomargin-x">
-    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="padding-left: 2rem; margin-right: -1rem">
+    <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+
     <div class="col-lg-8 nopadding-x-md">
       <div class="container nopadding-x-md" id="board-ctn">
-        <div class="py-5" id="board">
+        <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">常用系统命令总结</h1>
             
               <p class="note note-info">
                 
-                  本文最后更新于：2022年9月5日 晚上
+                  
+                    本文最后更新于：2022年9月5日 晚上
+                  
                 
               </p>
             
-            <div class="markdown-body">
-              <p><code>Linux</code>系统和<code>Windows</code>系统下的常用<code>shell</code>命令汇总</p>
+            
+              <div class="markdown-body">
+                
+                <p><code>Linux</code>系统和<code>Windows</code>系统下的常用<code>shell</code>命令汇总</p>
 <span id="more"></span>
 
-<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="Linux-通用"><a href="#Linux-通用" class="headerlink" title="Linux 通用"></a>Linux 通用</h2><h3 id="1-文件类"><a href="#1-文件类" class="headerlink" title="1.文件类"></a>1.文件类</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ls <span class="hljs-comment"># 列出文件目录</span><br>cp <span class="hljs-comment"># 拷贝文件</span><br>mv <span class="hljs-comment"># 移动文件</span><br><span class="hljs-built_in">pwd</span> <span class="hljs-comment"># 显示当前所在目录</span><br>whoami <span class="hljs-comment"># 显示当前用户</span><br>mkdir [dir] <span class="hljs-comment"># 创建目录</span><br>rm [-rf] [file|dir] <span class="hljs-comment"># 删除文件/目录</span><br>cat/tail/more/less [file] <span class="hljs-comment"># 查看文件</span><br>touch [file] <span class="hljs-comment"># 编辑文件，不存在则新建</span><br><span class="hljs-built_in">cd</span> ~/-/[dir] <span class="hljs-comment"># 跳转到用户目录/上一个使用的目录/dir目录</span><br>find [file]  <span class="hljs-comment"># 查找文件</span><br>grep [str]   <span class="hljs-comment"># 查找字符串</span><br>&gt; / &gt;&gt; [result.txt] <span class="hljs-comment"># 标准输出重定向，覆盖之前内容/附加模式（保留之前内容）</span><br></code></pre></div></td></tr></table></figure>
+<h1 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h1><h2 id="Linux-通用"><a href="#Linux-通用" class="headerlink" title="Linux 通用"></a>Linux 通用</h2><h3 id="1-文件类"><a href="#1-文件类" class="headerlink" title="1.文件类"></a>1.文件类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">ls <span class="hljs-comment"># 列出文件目录</span><br>cp <span class="hljs-comment"># 拷贝文件</span><br>mv <span class="hljs-comment"># 移动文件</span><br><span class="hljs-built_in">pwd</span> <span class="hljs-comment"># 显示当前所在目录</span><br>whoami <span class="hljs-comment"># 显示当前用户</span><br>mkdir [dir] <span class="hljs-comment"># 创建目录</span><br>rm [-rf] [file|dir] <span class="hljs-comment"># 删除文件/目录</span><br>cat/tail/more/less [file] <span class="hljs-comment"># 查看文件</span><br>touch [file] <span class="hljs-comment"># 编辑文件，不存在则新建</span><br><span class="hljs-built_in">cd</span> ~/-/[dir] <span class="hljs-comment"># 跳转到用户目录/上一个使用的目录/dir目录</span><br>find [file]  <span class="hljs-comment"># 查找文件</span><br>grep [str]   <span class="hljs-comment"># 查找字符串</span><br>&gt; / &gt;&gt; [result.txt] <span class="hljs-comment"># 标准输出重定向，覆盖之前内容/附加模式（保留之前内容）</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="2-包管理"><a href="#2-包管理" class="headerlink" title="2.包管理"></a>2.包管理</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">sudo apt install [pkg_name] <span class="hljs-comment"># Ubuntu，对 apt-get 命令的封装</span><br>yum install [pkg_name] <span class="hljs-comment"># CentOS</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="2-包管理"><a href="#2-包管理" class="headerlink" title="2.包管理"></a>2.包管理</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">sudo apt install [pkg_name] <span class="hljs-comment"># Ubuntu，对 apt-get 命令的封装</span><br>yum install [pkg_name] <span class="hljs-comment"># CentOS</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3-系统类"><a href="#3-系统类" class="headerlink" title="3.系统类"></a>3.系统类</h3><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">su <span class="hljs-comment"># 切换到管理员模式</span><br>su -u root -p  <span class="hljs-comment"># 设置管理员密码</span><br>sudo [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 临时以管理员身份执行命令</span><br><span class="hljs-built_in">echo</span> [content] <span class="hljs-comment"># 显示某一信息</span><br>ps  <span class="hljs-comment"># 查看进程</span><br>df  <span class="hljs-comment"># 检查硬盘剩余空间</span><br>du  <span class="hljs-comment"># 检查目录所用空间</span><br>cal <span class="hljs-comment"># 显示万年历</span><br>man [<span class="hljs-built_in">command</span>]   <span class="hljs-comment"># 查看命令帮助信息</span><br><span class="hljs-built_in">which</span> [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 查询命令</span><br><span class="hljs-built_in">alias</span> [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 为命令取别名</span><br><span class="hljs-built_in">unalias</span> [name]  <span class="hljs-comment"># 删除name别名</span><br>reboot   <span class="hljs-comment"># 重启系统</span><br><span class="hljs-built_in">history</span>  <span class="hljs-comment"># 显示所有历史输入的命令</span><br>shutdown <span class="hljs-comment"># 关机</span><br>ctrl + l <span class="hljs-comment"># 清屏</span><br>mount/umount [device] [dir] <span class="hljs-comment"># 挂载/取消挂载device为dir目录</span><br>[<span class="hljs-built_in">command</span>] | grep [kw] <span class="hljs-comment"># 管道命令&quot;|&quot;将command执行的结果传给grep命令，grep再根据kw进行筛选</span><br></code></pre></div></td></tr></table></figure>
+<h3 id="3-系统类"><a href="#3-系统类" class="headerlink" title="3.系统类"></a>3.系统类</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash">su <span class="hljs-comment"># 切换到管理员模式</span><br>su -u root -p  <span class="hljs-comment"># 设置管理员密码</span><br>sudo [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 临时以管理员身份执行命令</span><br><span class="hljs-built_in">echo</span> [content] <span class="hljs-comment"># 显示某一信息</span><br>ps  <span class="hljs-comment"># 查看进程</span><br>df  <span class="hljs-comment"># 检查硬盘剩余空间</span><br>du  <span class="hljs-comment"># 检查目录所用空间</span><br>cal <span class="hljs-comment"># 显示万年历</span><br>man [<span class="hljs-built_in">command</span>]   <span class="hljs-comment"># 查看命令帮助信息</span><br><span class="hljs-built_in">which</span> [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 查询命令</span><br><span class="hljs-built_in">alias</span> [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 为命令取别名</span><br><span class="hljs-built_in">unalias</span> [name]  <span class="hljs-comment"># 删除name别名</span><br>reboot   <span class="hljs-comment"># 重启系统</span><br><span class="hljs-built_in">history</span>  <span class="hljs-comment"># 显示所有历史输入的命令</span><br>shutdown <span class="hljs-comment"># 关机</span><br>ctrl + l <span class="hljs-comment"># 清屏</span><br>mount/umount [device] [dir] <span class="hljs-comment"># 挂载/取消挂载device为dir目录</span><br>[<span class="hljs-built_in">command</span>] | grep [kw] <span class="hljs-comment"># 管道命令&quot;|&quot;将command执行的结果传给grep命令，grep再根据kw进行筛选</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">apt list <span class="hljs-comment"># 查看已安装的软件包</span><br>apt edit-sources <span class="hljs-comment"># 编辑源列表</span><br>apt [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 执行包管理命令，如：install、remove、update等</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">apt list <span class="hljs-comment"># 查看已安装的软件包</span><br>apt edit-sources <span class="hljs-comment"># 编辑源列表</span><br>apt [<span class="hljs-built_in">command</span>] <span class="hljs-comment"># 执行包管理命令，如：install、remove、update等</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">open [file] <span class="hljs-comment"># 打开文件/目录/软件</span><br>say [str] <span class="hljs-comment"># 语音朗读str</span><br>say -f demo.txt -o [file] <span class="hljs-comment"># 朗读demo，并将结果存储到file中</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="MacOS"><a href="#MacOS" class="headerlink" title="MacOS"></a>MacOS</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">open [file] <span class="hljs-comment"># 打开文件/目录/软件</span><br>say [str] <span class="hljs-comment"># 语音朗读str</span><br>say -f demo.txt -o [file] <span class="hljs-comment"># 朗读demo，并将结果存储到file中</span><br></code></pre></td></tr></table></figure>
 
 <h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="1-文件类-1"><a href="#1-文件类-1" class="headerlink" title="1.文件类"></a>1.文件类</h2><ul>
 <li>文件批量重命名</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ren *.jpg *.png <span class="hljs-comment"># 重命名jpg格式文件为png格式</span><br>ren *.* *.png   <span class="hljs-comment"># 重命名所有格式文件为png格式</span><br><span class="hljs-built_in">cd</span> -d [dist]    <span class="hljs-comment"># 目录跳转，使用-d参数支持跨盘符跳转</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ren *.jpg *.png <span class="hljs-comment"># 重命名jpg格式文件为png格式</span><br>ren *.* *.png   <span class="hljs-comment"># 重命名所有格式文件为png格式</span><br><span class="hljs-built_in">cd</span> -d [dist]    <span class="hljs-comment"># 目录跳转，使用-d参数支持跨盘符跳转</span><br></code></pre></td></tr></table></figure>
 
 <ul>
 <li>列出文件目录</li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">dir [path] &gt; [dist]\dir.txt <span class="hljs-comment"># 列出path目录下的文件，并导出到dist目录下的dir.txt中</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dir [path] &gt; [dist]\dir.txt <span class="hljs-comment"># 列出path目录下的文件，并导出到dist目录下的dir.txt中</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="2-网络类"><a href="#2-网络类" class="headerlink" title="2.网络类"></a>2.网络类</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">ipconfig -all <span class="hljs-comment"># 查看ip配置信息</span><br>ipconfig /flushdns <span class="hljs-comment"># 刷新系统DNS缓存</span><br>ping [ip] <span class="hljs-comment"># 检查网络连通性</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="2-网络类"><a href="#2-网络类" class="headerlink" title="2.网络类"></a>2.网络类</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">ipconfig -all <span class="hljs-comment"># 查看ip配置信息</span><br>ipconfig /flushdns <span class="hljs-comment"># 刷新系统DNS缓存</span><br>ping [ip] <span class="hljs-comment"># 检查网络连通性</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="3-通用类"><a href="#3-通用类" class="headerlink" title="3.通用类"></a>3.通用类</h2><figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">cls  <span class="hljs-comment"># 清屏</span><br><span class="hljs-built_in">exit</span> <span class="hljs-comment"># 退出</span><br></code></pre></div></td></tr></table></figure>
+<h2 id="3-通用类"><a href="#3-通用类" class="headerlink" title="3.通用类"></a>3.通用类</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">cls  <span class="hljs-comment"># 清屏</span><br><span class="hljs-built_in">exit</span> <span class="hljs-comment"># 退出</span><br></code></pre></td></tr></table></figure>
 
-            </div>
-            <hr>
-            <div>
-              <div class="post-metas mb-3">
-                
-                  <div class="post-meta mr-3">
-                    <i class="iconfont icon-category"></i>
-                    
-                      <a class="hover-with-bg" href="/categories/%E8%AE%A1%E7%A7%91/">计科</a>
-                    
-                  </div>
-                
-                
-                  <div class="post-meta">
-                    <i class="iconfont icon-tags"></i>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
-                    
-                  </div>
                 
               </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E8%AE%A1%E7%A7%91/" class="category-chain-item">计科</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E7%AC%94%E8%AE%B0/">#笔记</a>
+      
+    </div>
+  
+</div>
+
+
               
-                <p class="note note-warning">
-                  
-                    版权声明：自由转载-非商用-可衍生-保持署名 | <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-NC-SA 4.0 </a>
-                  
-                </p>
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>常用系统命令总结</div>
+      <div>https://wanghao6736.github.io/2021/08/27/Common-Commands-Summary/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>Wang Hao</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2021年8月27日</div>
+        </div>
+      
+      
+      <div class="license-meta-item">
+        <div>许可协议</div>
+        <div>
+          
+            
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                <i class="iconfont icon-by"></i>
+              </span>
+              </a>
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                <i class="iconfont icon-nc"></i>
+              </span>
+              </a>
+            
+              <a target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+              <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                <i class="iconfont icon-sa"></i>
+              </span>
+              </a>
+            
+          
+        </div>
+      </div>
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
               
-              
-                <div class="post-prevnext">
+                <div class="post-prevnext my-3">
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/11/16/PFC-Notes-001/">
+                      <a href="/2021/11/16/PFC-Notes-001/" title="PFC 学习笔记-001">
                         <i class="iconfont icon-arrowleft"></i>
                         <span class="hidden-mobile">PFC 学习笔记-001</span>
                         <span class="visible-mobile">上一篇</span>
@@ -308,7 +465,7 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2021/08/27/3DsMax-learning-note/">
+                      <a href="/2021/08/27/3DsMax-learning-note/" title="3DsMax 学习笔记">
                         <span class="hidden-mobile">3DsMax 学习笔记</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
@@ -324,25 +481,134 @@
         </div>
       </div>
     </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar category-bar" style="margin-left: -1rem">
     
-      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
-        <div id="toc">
-  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div class="toc-body" id="toc-body"></div>
+
+
+
+
+
+<div class="category-list">
+  
+  
+    
+    
+    
+    <div class="category row nomargin-x">
+      <a class="category-item 
+          list-group-item category-item-action col-10 col-md-11 col-xm-11" title="计科"
+        id="heading-d693442450db119d90f9261fa53eb2f7" role="tab" data-toggle="collapse" href="#collapse-d693442450db119d90f9261fa53eb2f7"
+        aria-expanded="true"
+      >
+        计科
+        <span class="list-group-count">(5)</span>
+        <i class="iconfont icon-arrowright"></i>
+      </a>
+      
+      <div class="category-collapse collapse show" id="collapse-d693442450db119d90f9261fa53eb2f7"
+           role="tabpanel" aria-labelledby="heading-d693442450db119d90f9261fa53eb2f7">
+        
+        
+          
+  <div class="category-post-list">
+    
+    
+      
+      
+        <a href="/2022/09/09/Website-Deployment/" title="Halo 动态博客搭建和代理配置"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">Halo 动态博客搭建和代理配置</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021/08/20/Hexo-Blog/" title="基于Hexo框架的博客搭建"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">基于Hexo框架的博客搭建</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021/08/22/Developer-tools-and-configuration/" title="常用开发工具的安装及配置"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">常用开发工具的安装及配置</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021/08/27/Common-Commands-Summary/" title="常用系统命令总结"
+           class="list-group-item list-group-item-action
+           active">
+          <span class="category-post">常用系统命令总结</span>
+        </a>
+      
+    
+      
+      
+        <a href="/2021/08/20/Connect-github-using-ssh-keys/" title="通过ssh与Github建立连接"
+           class="list-group-item list-group-item-action
+           ">
+          <span class="category-post">通过ssh与Github建立连接</span>
+        </a>
+      
+    
+  </div>
+
+        
+      </div>
+    </div>
+  
 </div>
 
-      </div>
-    
+
+  </aside>
+
+
+    </div>
   </div>
 </div>
 
-<!-- Custom -->
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
 
 
     
 
     
-      <a id="scroll-top-button" href="#" role="button">
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
         <i class="iconfont icon-arrowup" aria-hidden="true"></i>
       </a>
     
@@ -361,32 +627,34 @@
       <div class="modal-body mx-3">
         <div class="md-form mb-5">
           <input type="text" id="local-search-input" class="form-control validate">
-          <label data-error="x" data-success="v"
-                 for="local-search-input">关键词</label>
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
         </div>
         <div class="list-group" id="local-search-result"></div>
       </div>
     </div>
   </div>
 </div>
+
     
 
     
   </main>
 
-  <footer class="text-center mt-5 py-3">
-  <div class="footer-content">
-     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
-  </div>
+  <footer>
+    <div class="footer-inner">
   
-
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
   
-
   
-</footer>
+  
+  
+</div>
 
+  </footer>
 
-  <!-- SCRIPTS -->
+  <!-- Scripts -->
   
   <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
@@ -402,11 +670,26 @@
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-<!-- Plugins -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
 
 
   
@@ -415,85 +698,88 @@
 
 
 
+
   
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      headingSelector : CONFIG.toc.headingSelector || 'h1,h2,h3,h4,h5,h6',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      collapseDepth   : CONFIG.toc.collapseDepth || 0,
+      scrollSmooth    : true,
+      headingsOffset  : -boardTop
+    });
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+  });
+</script>
 
 
+  <script src=https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js></script>
 
-  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+  <script>Fluid.plugins.codeWidget();</script>
 
 
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+  });
+</script>
 
-  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+  
+<script>
+  Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
 
 
-
-  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
-
-
-
-
-
-
-  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
-  </script>
-
-
+  <script>Fluid.plugins.imageCaption();</script>
 
   <script  src="/js/local-search.js" ></script>
-  <script>
-    (function () {
-      var path = "/local-search.xml";
-      $('#local-search-input').on('click', function() {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      });
-      $('#modalSearch').on('shown.bs.modal', function() {
-        $('#local-search-input').focus();
-      });
-    })()
-  </script>
 
 
 
 
 
-
-
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-
-
-
-
-<!-- 主题的启动项 保持在最底部 -->
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
 <script  src="/js/boot.js" ></script>
 
 
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
 </body>
 </html>
