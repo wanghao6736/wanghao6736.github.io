@@ -103,7 +103,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -366,8 +366,8 @@
 </li>
 <li><a target="_blank" rel="noopener" href="https://onedrive.live.com/">OneDrive</a><ul>
 <li>个人版<code>Windows</code>客户端无法正常登录时需要手动设置网络的<code>DNS</code>服务器，才能解析到正确的<code>OneDrive IP</code>地址</li>
-<li>经过实测，阿里和常用的 114 域名服务器都不能正确解析，截至 2022.03.24 能用的<code>DNS</code>有：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text"># Google 提供的 DNS<br>8.8.8.8 | 8.8.4.4<br># Microsoft 推荐的 DNS<br>4.2.2.2 | 4.2.2.1<br># 实测无法登录个人版 OneDrive 的 DNS<br>114.114.114.114 | 114.114.115.115<br></code></pre></td></tr></table></figure></li>
-<li>按理说在<code>hosts</code>文件中手动指定<code>https://onedrive.live.com/</code>的<code>IP</code>地址为<code>13.107.42.13</code>也是可行的：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text"># hosts 文件路径：C:\Windows\System32\drivers\etc\hosts<br># 在 hosts 文件末尾添加<br>13.107.42.13 onedrive.live.com<br></code></pre></td></tr></table></figure></li>
+<li>经过实测，阿里和常用的 114 域名服务器都不能正确解析，截至 2022.03.24 能用的<code>DNS</code>有：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs text"># Google 提供的 DNS<br>8.8.8.8 | 8.8.4.4<br># Microsoft 推荐的 DNS<br>4.2.2.2 | 4.2.2.1<br># 实测无法登录个人版 OneDrive 的 DNS<br>114.114.114.114 | 114.114.115.115<br></code></pre></td></tr></table></figure></li>
+<li>按理说在<code>hosts</code>文件中手动指定<code>https://onedrive.live.com/</code>的<code>IP</code>地址为<code>13.107.42.13</code>也是可行的：<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs text"># hosts 文件路径：C:\Windows\System32\drivers\etc\hosts<br># 在 hosts 文件末尾添加<br>13.107.42.13 onedrive.live.com<br></code></pre></td></tr></table></figure></li>
 <li>2022.7 更新：使用校园网的<code>DNS</code>可以正常使用，不会出现问题</li>
 </ul>
 </li>

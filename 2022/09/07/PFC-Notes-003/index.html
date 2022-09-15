@@ -104,7 +104,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -378,7 +378,7 @@
 <h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><p><code>Fish</code>语言的语法比较简单，容易上手，和<code>Python</code>有一点类似：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs fish">fish define foo(a, b) ; 带参数函数定义，也可以去掉括号定义无参函数<br>    a = 1 ; 声明和定义全局变量，等价于 global a = 1<br>    global b = 2<br><br>    if a # b then ; Fish 中，不等于用 &quot;#&quot; 号表示<br>        local c = a + b ; 声明和定义局部变量，作用域为其所在的命令对，这里是 if ··· endif<br>        io.out(&quot;a != b&quot;)<br>    endif<br><br>    foo = a + b ; 函数名可以赋值，相当于函数返回值，需要注意不能多次赋值，那样相当于循环调用 foo 函数<br>end<br>@foo(1, 2) ; 在函数外需要使用 &quot;@&quot; 符号调用 Fish 函数<br></code></pre></td></tr></table></figure>
 
-<h2 id="Fish-方法调用"><a href="#Fish-方法调用" class="headerlink" title="Fish 方法调用"></a>Fish 方法调用</h2><p>与常见的面向对象语言不同，<code>Fish</code>语言中某类对象调用其方法的方式为 “类名.方法(对象指针/id/name)”：</p>
+<h2 id="Fish-方法调用"><a href="#Fish-方法调用" class="headerlink" title="Fish 方法调用"></a>Fish 方法调用</h2><p>与常见的面向对象语言不同，<code>Fish</code>语言中某类对象调用其方法的方式为 “类名.方法(对象指针&#x2F;id&#x2F;name)”：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs fish">[mp1 = measure.find(1)] ; 查找 id 为 1 的测量圆<br>measure.porosity(mp1)   ; 调用 measure 类的 porosity 方法查看 mp1 的孔隙率<br></code></pre></td></tr></table></figure>
 
 <h2 id="Fish-语句与命令流嵌套"><a href="#Fish-语句与命令流嵌套" class="headerlink" title="Fish 语句与命令流嵌套"></a>Fish 语句与命令流嵌套</h2><p>在<code>PFC</code>中，新建了一个<code>Data file</code>后，默认是写入命令流语句或者定义<code>Fish</code>函数，想要写入单独的<code>Fish</code>语句则需要将该语句用 “[]” 括起来；在<code>Fish</code>函数中使用命令流时，需要将命令流写在<code>command ··· endcommand</code>中。以下为简单的示例，仅作说明，实际使用时会复杂一些：</p>
@@ -424,7 +424,7 @@
 <h2 id="Python-的使用场景"><a href="#Python-的使用场景" class="headerlink" title="Python 的使用场景"></a>Python 的使用场景</h2><p>对于<code>PFC</code>提供的三种建模方式，个人认为命令流和<code>Fish</code>语言适合用来直接建模，而<code>Python</code>语言则适合对模型中的各种数据进行处理或者进行流程控制。我觉得典型的使用场景如下：</p>
 <ul>
 <li>1.命令流或<code>Fish</code>建模</li>
-<li>2.<code>history</code>/<code>fish history</code>监测数据</li>
+<li>2.<code>history</code>&#x2F;<code>fish history</code>监测数据</li>
 <li>3.<code>plot export</code>导出数据</li>
 <li>4.<code>Python</code>获取导出的数据并处理</li>
 <li>5.根据处理的结果决定下一步操作</li>

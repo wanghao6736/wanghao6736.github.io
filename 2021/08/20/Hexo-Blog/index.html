@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wanghao6736.github.io/img/post/post1.jpg">
 <meta property="article:published_time" content="2021-08-20T08:30:00.000Z">
-<meta property="article:modified_time" content="2022-09-15T03:44:05.914Z">
+<meta property="article:modified_time" content="2022-09-15T07:36:14.502Z">
 <meta property="article:author" content="Wang Hao">
 <meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary_large_image">
@@ -103,7 +103,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -257,7 +257,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.4k 字
+          1.7k 字
         
       </span>
     
@@ -321,7 +321,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年9月15日 中午
+                    本文最后更新于：2022年9月15日 下午
                   
                 
               </p>
@@ -370,7 +370,16 @@
 <p>首先在 <code>Github</code> 上创建一个名为 <code>[username].github.io</code> 的空仓库，<code>[username]</code> 必须和自己的 <code>Github</code> 用户名一致。此外采用<code>hexo-deployer-git</code>插件部署时，建议将仓库设为私有，这样生成的站点文件对外是不可见的；<code>Hexo</code>官方也提供了通过<code>Travis CI</code>来将博客部署到<code>Git Pages</code>上的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">方法</a>，这样可以不上传生成后站点文件，但需要上传站点的源文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo deploy <span class="hljs-comment"># 将生成的网站文件发布到 Git Page 上</span><br></code></pre></td></tr></table></figure>
 
-<h2 id="7-个性化主题"><a href="#7-个性化主题" class="headerlink" title="7. 个性化主题"></a>7. 个性化主题</h2><ol>
+<h2 id="7-版本更新"><a href="#7-版本更新" class="headerlink" title="7. 版本更新"></a>7. 版本更新</h2><p>首先全局更新<code>Hexo</code>的命令行工具<code>hexo-cli</code>：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">hexo version <span class="hljs-comment"># 检查当前 hexo 版本</span><br>npm i hexo-cli -g <span class="hljs-comment"># 全局更新 hexo-cli</span><br>hexo version <span class="hljs-comment"># 检查更新后的 hexo 版本</span><br></code></pre></td></tr></table></figure>
+
+<p>然后更新全局包：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm i npm-check -g <span class="hljs-comment"># 检查全局需要升级的包</span><br>npm i npm-upgrade -g <span class="hljs-comment"># 更新 package.json</span><br>npm update -g <span class="hljs-comment"># 更新全局包</span><br></code></pre></td></tr></table></figure>
+
+<p>最后更新博客目录下的包，转到博客根目录执行：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs sh">npm-check <span class="hljs-comment"># 检查当前目录下需要更新的包</span><br>npm-upgrade <span class="hljs-comment"># 更新 package.json</span><br>npm update --save <span class="hljs-comment"># 更新当前目录下的包，并添加依赖</span><br></code></pre></td></tr></table></figure>
+
+<h2 id="8-个性化主题"><a href="#8-个性化主题" class="headerlink" title="8. 个性化主题"></a>8. 个性化主题</h2><ol>
 <li>clone <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid 主题</a>到博客目录下的主题文件夹中</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">git <span class="hljs-built_in">clone</span> https://github.com/fluid-dev/hexo-theme-fluid.git themes/fluid<br></code></pre></td></tr></table></figure>

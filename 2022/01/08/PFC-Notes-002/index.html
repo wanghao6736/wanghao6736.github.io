@@ -104,7 +104,7 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.0"></head>
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"></head>
 
 
 <body>
@@ -334,7 +334,7 @@
 <span id="more"></span>
 
 <h1 id="PFC-模型生成及预平衡"><a href="#PFC-模型生成及预平衡" class="headerlink" title="PFC 模型生成及预平衡"></a>PFC 模型生成及预平衡</h1><h2 id="PFC-项目文件夹构成"><a href="#PFC-项目文件夹构成" class="headerlink" title="PFC 项目文件夹构成"></a>PFC 项目文件夹构成</h2><p>PFC 6.0 支持以命令流、Fish 语言、Python 语言三种方式编写模型代码，并且三类方式可以在一定程度上交叉使用，灵活度很高，一个完整的 PFC 6.0 项目文件夹一般包括如下几类文件：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">*.*prj - 以json格式保存的项目配置信息<br>*.*dat - 命令流文件，一般是建模代码<br>*.*fis - Fish函数文件，定义模型需要用的函数<br>*.*sav - 状态文件，保存模型某一时刻的状态<br>*.result - 结果文件，保存程序运行结果<br>*.backup - 备份文件，防止程序意外终止<br>*.temp - 程序运行时的临时文件<br></code></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs text">*.*prj - 以json格式保存的项目配置信息<br>*.*dat - 命令流文件，一般是建模代码<br>*.*fis - Fish函数文件，定义模型需要用的函数<br>*.*sav - 状态文件，保存模型某一时刻的状态<br>*.result - 结果文件，保存程序运行结果<br>*.backup - 备份文件，防止程序意外终止<br>*.temp - 程序运行时的临时文件<br></code></pre></td></tr></table></figure>
 
 <div class="note note-info">
             <p>PFC 6.0 一般在文件后缀中采用 3 和 2 来标识该文件是三维还是二维的项目文件，如<code>*.p3dat</code>、<code>*.p3prj</code>等表示的就是三维的项目文件。</p>
@@ -352,7 +352,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs batch">wall create   # 连接一系列指定的点创建<br>wall generate # 以球体、平面等基本几何体创建<br>wall import   # 导入外部 CAD 文件或从 Geometry 创建<br></code></pre></td></tr></table></figure>
 
 <p>另外，PFC 6.0 自带与 FLAC 耦合，还可以使用<code>wall-structure create</code>命令以 FLAC 中的<code>structure</code>单元为模板创建墙体。</p>
-<h3 id="3-颗粒生成"><a href="#3-颗粒生成" class="headerlink" title="3.颗粒生成"></a>3.颗粒生成</h3><p>墙体设置好后就可以生成颗粒了，PFC 中的颗粒对象有 Ball 和 Clump。由多个 Ball 组成的刚性整体就是 Clump，它不会发生变形；而多个 Ball 通过一定的强度的黏结组合成的整体叫做 Cluster，当 Ball 间的黏结破坏后，Cluster 便退化为 Ball。<br>此外 PFC 中还有一类对象 Rigid Blocks —— 可以看作是填满 Ball 的具有封闭边界的小单元，一般用来模拟各种封闭的凸多面体/多边形。<br>这里主要介绍 Ball 和 Clump 的生成，因为其他两类对象我没用过 😂，命令如下：</p>
+<h3 id="3-颗粒生成"><a href="#3-颗粒生成" class="headerlink" title="3.颗粒生成"></a>3.颗粒生成</h3><p>墙体设置好后就可以生成颗粒了，PFC 中的颗粒对象有 Ball 和 Clump。由多个 Ball 组成的刚性整体就是 Clump，它不会发生变形；而多个 Ball 通过一定的强度的黏结组合成的整体叫做 Cluster，当 Ball 间的黏结破坏后，Cluster 便退化为 Ball。<br>此外 PFC 中还有一类对象 Rigid Blocks —— 可以看作是填满 Ball 的具有封闭边界的小单元，一般用来模拟各种封闭的凸多面体&#x2F;多边形。<br>这里主要介绍 Ball 和 Clump 的生成，因为其他两类对象我没用过 😂，命令如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs batch">ball/clump create     # 生成单个颗粒<br>ball/clump generate   # 按孔隙率和粒径范围批量生成，颗粒间无重叠<br>ball/clump distribute # 按孔隙率和粒径范围批量生成，颗粒间有重叠<br></code></pre></td></tr></table></figure>
 
 <p><code>create</code>命令主要用于需要精确控制颗粒半径和位置的情况，如柔性三轴中生成颗粒膜；<code>generate</code>命令生成颗粒时会确保颗粒间无重叠，因此平衡后的孔隙率会略大于设定值；<code>distribute</code>命令生成颗粒时不会检查颗粒是否重叠，导致生成后的颗粒间可能存在大量的重叠，产生较大的内力，因此成样后需要将颗粒充分地弹开，以减小不平衡力。</p>
