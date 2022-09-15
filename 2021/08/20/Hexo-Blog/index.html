@@ -25,7 +25,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://wanghao6736.github.io/img/post/post1.jpg">
 <meta property="article:published_time" content="2021-08-20T08:30:00.000Z">
-<meta property="article:modified_time" content="2022-09-07T11:39:13.620Z">
+<meta property="article:modified_time" content="2022-09-15T03:44:05.914Z">
 <meta property="article:author" content="Wang Hao">
 <meta property="article:tag" content="教程">
 <meta name="twitter:card" content="summary_large_image">
@@ -257,7 +257,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          1.4k 字
         
       </span>
     
@@ -321,7 +321,7 @@
               <p class="note note-info">
                 
                   
-                    本文最后更新于：2022年9月7日 晚上
+                    本文最后更新于：2022年9月15日 中午
                   
                 
               </p>
@@ -355,23 +355,20 @@
 
 <p>然后打开浏览器，输入网址 <code>http://localhost:4000/</code> 就可以预览网站内容了。</p>
 <h2 id="6-将博客部署到-GitHub-Page"><a href="#6-将博客部署到-GitHub-Page" class="headerlink" title="6. 将博客部署到 GitHub Page"></a>6. 将博客部署到 GitHub Page</h2><ol>
-<li>转到博客主目录安装部署插件</li>
+<li>转到博客主目录安装一键部署插件</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
 
 <ol start="2">
 <li>更改<code>_config.yml</code>配置</li>
 </ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># Deployment</span><br><span class="hljs-comment">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="hljs-attr">deploy:</span><br>	<span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>	<span class="hljs-attr">repo:</span> <span class="hljs-string">https://github.com/[username]/[username].github.io.git</span><br>	<span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># _config_yml</span><br><span class="hljs-comment"># Deployment</span><br><span class="hljs-comment">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="hljs-attr">deploy:</span><br>	<span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>	<span class="hljs-attr">repo:</span> <span class="hljs-string">https://github.com/[username]/[username].github.io.git</span><br>	<span class="hljs-attr">branch:</span> <span class="hljs-string">master</span><br></code></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>部署</li>
+<li>一键部署</li>
 </ol>
+<p>首先在 <code>Github</code> 上创建一个名为 <code>[username].github.io</code> 的空仓库，<code>[username]</code> 必须和自己的 <code>Github</code> 用户名一致。此外采用<code>hexo-deployer-git</code>插件部署时，建议将仓库设为私有，这样生成的站点文件对外是不可见的；<code>Hexo</code>官方也提供了通过<code>Travis CI</code>来将博客部署到<code>Git Pages</code>上的<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/github-pages">方法</a>，这样可以不上传生成后站点文件，但需要上传站点的源文件。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo deploy <span class="hljs-comment"># 将生成的网站文件发布到 Git Page 上</span><br></code></pre></td></tr></table></figure>
-
-<div class="note note-primary">
-            <p>需要事先在 <code>Github</code> 上创建一个名为 <code>[username].github.io</code> 的空仓库，<code>[username]</code> 必须和自己的 <code>Github</code> 用户名一致</p>
-          </div>
 
 <h2 id="7-个性化主题"><a href="#7-个性化主题" class="headerlink" title="7. 个性化主题"></a>7. 个性化主题</h2><ol>
 <li>clone <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid 主题</a>到博客目录下的主题文件夹中</li>
@@ -381,7 +378,7 @@
 <ol start="2">
 <li>在博客配置文件 <code>_config.yml</code> 中配置新的主题</li>
 </ol>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span> <span class="hljs-comment"># _config_yml</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># _config_yml</span><br><span class="hljs-attr">theme:</span> <span class="hljs-string">fluid</span><br></code></pre></td></tr></table></figure>
 
                 
               </div>
